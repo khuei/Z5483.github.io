@@ -47,3 +47,8 @@ Clemson University - Bachelor of Computer Science (2021 - present)
 - Spoken languages:
   - English
   - Vietnamese
+
+### MISC
+
+Email: Z5483Y@gmail.com
+GPG Key: [public key](./khuen-public-key.gpg)
