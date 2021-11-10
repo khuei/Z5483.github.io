@@ -1,12 +1,10 @@
 ---
-title: Hello World
+title: C Coding Style
 date: 2021-11-08 09:53:36
 tags: misc
 ---
 
-> Testing Page
-
-## Coding Style
+> This page is generated for website testing purposes
 
 ### Text Width
 
@@ -26,7 +24,7 @@ This style of indentation clearly defines where a block of code starts and ends 
 
 For `switch-case` statement, align the switch and its subordinate case labels in the same column. For example:
 
-``` cpp
+``` c
 switch (suffix) {
 case 'a':
       break;
@@ -47,7 +45,7 @@ But not after `sizeof`, `typeof`, `alignof`, or `__attribute__`.
 When declaring pointer, place the `*` adjacent to the data name or function
 name like this:
 
-``` cpp
+``` c
 char *string;
 int *num(void);
 void die(const char *errstr, ...);
@@ -86,7 +84,7 @@ Use tabs for indentation and spaces for alignment. This ensures everything will 
 
 Put opening brace last on the line, and put the close brace first. This applies to all non-functional statement blocks (if, switch, for, while, do).
 
-``` cpp
+``` c
 if (true) {
       // do x
       // do y
@@ -97,7 +95,7 @@ if (true) {
 However, for function, place opening brace at the beginning of the next line
 like this:
 
-``` cpp
+``` c
 int
 function (int x)
 {
@@ -107,7 +105,7 @@ function (int x)
 
 Usually closing brace is empty on a line of its own except in cases where it is followed by a continuation of the same statement, such as a while in a `do-while` statement or an else in an `if-else` statement like the following:
 
-``` cpp
+``` c
 do {
       // body of do-while loop
 } while (condition);
@@ -115,7 +113,7 @@ do {
 
 and
 
-``` cpp
+``` c
 if (x == y) {
       // do something
 } else if (x > y) {
@@ -127,21 +125,21 @@ if (x == y) {
 
 Do not place braces in situation where there is only a single statement in the block. For example:
 
-``` cpp
+``` c
 for (condition)
       action();
 ```
 
 and
 
-``` cpp
+``` c
 if (condition)
       action();
 ```
 
 and
 
-``` cpp
+``` c
 if (condition)
         do_something();
 else
@@ -150,7 +148,7 @@ else
 
 However, this does not apply if only one branch of an `if-else` statement is a single statement. In this case, use braces in both branches like the following:
 
-``` cpp
+``` c
 if (condition) {
         do_this();
         do_that();
@@ -164,7 +162,7 @@ if (condition) {
 - Put return type and modifiers on its own line.
 - Put function name and argument list on next line.
 
-``` cpp
+``` c
 static void
 die(const char *errstr, ...)
 {
@@ -181,7 +179,7 @@ This allows to grep for function names by simply using `grep ^functioname(`
 
 The preferred style for long (multi-line) comments is:
 
-``` cpp
+``` c
 /*
  * This is the preferred style for multi-line
  * comments in the Linux kernel source code.
@@ -196,7 +194,7 @@ The preferred style for long (multi-line) comments is:
 
 Names of macros defining constants and labels in enums are capitalized.
 
-``` cpp
+``` c
 #define CONSTANT 0x12345
 ```
 
@@ -208,7 +206,7 @@ Generally, inline functions are preferable to macros resembling functions.
 
 Macros with multiple statements should be enclosed in a do - while block:
 
-``` cpp
+``` c
 #define macrofun(a, b, c)                       \
         do {                                    \
                 if (a == 5)                     \
@@ -220,7 +218,7 @@ Things to avoid when using macros:
 
 1. macros that affect control flow:
 
-``` cpp
+``` c
 #define FOO(x)                                  \
         do {                                    \
                 if (blah(x) < 0)                \
@@ -232,7 +230,7 @@ is a very bad idea. It looks like a function call but exits the calling function
 
 2. macros that depend on having a local variable with a magic name:
 
-``` cpp
+``` c
 #define FOO(val) bar(index, val)
 ```
 
@@ -242,14 +240,14 @@ might look like a good thing, but it’s confusing as hell when one reads the co
 
 4. forgetting about precedence: macros defining constants using expressions must enclose the expression in parentheses. Beware of similar issues with macros using parameters.
 
-``` cpp
+``` c
 #define CONSTANT 0x4000
 #define CONSTEXP (CONSTANT | 3)
 ```
 
 5. namespace collisions when defining local variables in macros resembling functions:
 
-``` cpp
+``` c
 #define FOO(x)                          \
 ({                                      \
         typeof(x) ret;                  \
@@ -260,4 +258,4 @@ might look like a good thing, but it’s confusing as hell when one reads the co
 
 ret is a common name for a local variable - \__foo_ret is less likely to collide with an existing variable.
 
-The cpp manual deals with macros exhaustively. The gcc internals manual also covers RTL which is used frequently with assembly language in the kernel.
+The c manual deals with macros exhaustively. The gcc internals manual also covers RTL which is used frequently with assembly language in the kernel.

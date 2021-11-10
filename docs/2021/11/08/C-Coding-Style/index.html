@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Khue Nguyen">
+
+
+
+
+
+<title>C Coding Style | Khue Nguyen</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Home</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Home</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/projects">Projects</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">C Coding Style</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Khue Nguyen</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 8, 2021&nbsp;&nbsp;9:53:36</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <blockquote>
+<p>Testing Page</p>
+</blockquote>
+<h3 id="Text-Width"><a href="#Text-Width" class="headerlink" title="Text Width"></a>Text Width</h3><p>There is no set code width, so you do not need to break code lines. However, you should not overdo it, ~100 characters should be enough.</p>
+<h3 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h3><ul>
+<li>Name structures in <code>PascalCase</code></li>
+<li>Name variables and functions in <code>snake_case</code></li>
+</ul>
+<h3 id="Indentation"><a href="#Indentation" class="headerlink" title="Indentation"></a>Indentation</h3><ul>
+<li>Use tabs not space</li>
+<li>Tabs are 8 characters</li>
+</ul>
+<p>This style of indentation clearly defines where a block of code starts and ends especially when you have been looking at your screen for a long period of time</p>
+<p>For <code>switch-case</code> statement, align the switch and its subordinate case labels in the same column. For example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (suffix) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Spacing"><a href="#Spacing" class="headerlink" title="Spacing"></a>Spacing</h3><p>Use a space after these keywords: <code>if</code>, <code>switch</code>, <code>case</code>, <code>for</code>, <code>do</code>, <code>while</code></p>
+<p>But not after <code>sizeof</code>, <code>typeof</code>, <code>alignof</code>, or <code>__attribute__</code>.</p>
+<p>When declaring pointer, place the <code>*</code> adjacent to the data name or function<br>name like this:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *<span class="built_in">string</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">num</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">die</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *errstr, ...)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>Use one space around binary and ternary operators, such as these:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=  +  -  &lt;  &gt;  *  /  %  |  &amp;  ^  &lt;=  &gt;=  ==  !=  ?  :</span><br></pre></td></tr></table></figure>
+
+<p>Do not put space after unary operators:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;  *  +  -  ~  !  sizeof  typeof  alignof  __attribute__  defined</span><br></pre></td></tr></table></figure>
+
+<p>No space after postfix/prefix increment and decrement unary operators:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">++ --</span><br></pre></td></tr></table></figure>
+
+<p>And no space around the <code>.</code> and <code>-&gt;</code> structure member operators.</p>
+<p>In addition, do not leave trailing whitespace at the end of lines</p>
+<h3 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h3><p>Use tabs for indentation and spaces for alignment. This ensures everything will line up independent of tab size. This means:</p>
+<ul>
+<li>No tabs except beginning of line.</li>
+<li>Use spaces - not tabs - for multiline macros</li>
+</ul>
+<h3 id="Braces-Placement"><a href="#Braces-Placement" class="headerlink" title="Braces Placement"></a>Braces Placement</h3><p>Put opening brace last on the line, and put the close brace first. This applies to all non-functional statement blocks (if, switch, for, while, do).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="comment">// do x</span></span><br><span class="line">      <span class="comment">// do y</span></span><br><span class="line">      <span class="comment">// do z</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>However, for function, place opening brace at the beginning of the next line<br>like this:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span></span></span><br><span class="line"><span class="function"><span class="title">function</span> <span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      <span class="comment">// body of function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Usually closing brace is empty on a line of its own except in cases where it is followed by a continuation of the same statement, such as a while in a <code>do-while</code> statement or an else in an <code>if-else</code> statement like the following:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">      <span class="comment">// body of do-while loop</span></span><br><span class="line">&#125; <span class="keyword">while</span> (condition);</span><br></pre></td></tr></table></figure>
+
+<p>and</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x == y) &#123;</span><br><span class="line">      <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">      <span class="comment">// do something else</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// do something else</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Do not place braces in situation where there is only a single statement in the block. For example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (condition)</span><br><span class="line">      action();</span><br></pre></td></tr></table></figure>
+
+<p>and</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">      action();</span><br></pre></td></tr></table></figure>
+
+<p>and</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition)</span><br><span class="line">        do_something();</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">        do_something_else();</span><br></pre></td></tr></table></figure>
+
+<p>However, this does not apply if only one branch of an <code>if-else</code> statement is a single statement. In this case, use braces in both branches like the following:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">        do_this();</span><br><span class="line">        do_that();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        do_something_else();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><ul>
+<li>Put return type and modifiers on its own line.</li>
+<li>Put function name and argument list on next line.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span></span></span><br><span class="line"><span class="function"><span class="title">die</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *errstr, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      <span class="comment">// print error message</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This allows to grep for function names by simply using <code>grep ^functioname(</code></p>
+<h3 id="Commenting"><a href="#Commenting" class="headerlink" title="Commenting"></a>Commenting</h3><ul>
+<li>Use <code>/* comment */</code> for comments</li>
+<li>Use <code>// comment</code> for local, temporary commenting of code for debugging purposes</li>
+</ul>
+<p>The preferred style for long (multi-line) comments is:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * This is the preferred style for multi-line</span></span><br><span class="line"><span class="comment"> * comments in the Linux kernel source code.</span></span><br><span class="line"><span class="comment"> * Please use it consistently.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Description:  A column of asterisks on the left side,</span></span><br><span class="line"><span class="comment"> * with beginning and ending almost-blank lines.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Macros-Enums-and-RTL"><a href="#Macros-Enums-and-RTL" class="headerlink" title="Macros, Enums and RTL"></a>Macros, Enums and RTL</h2><p>Names of macros defining constants and labels in enums are capitalized.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONSTANT 0x12345</span></span><br></pre></td></tr></table></figure>
+
+<p>Enums are preferred when defining several related constants.</p>
+<p>CAPITALIZED macro names are appreciated but macros resembling functions may be named in lower case.</p>
+<p>Generally, inline functions are preferable to macros resembling functions.</p>
+<p>Macros with multiple statements should be enclosed in a do - while block:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> macrofun(a, b, c)                       \</span></span><br><span class="line"><span class="meta">        do &#123;                                    \</span></span><br><span class="line"><span class="meta">                <span class="meta-keyword">if</span> (a == 5)                     \</span></span><br><span class="line"><span class="meta">                        do_this(b, c);          \</span></span><br><span class="line"><span class="meta">        &#125; while (0)</span></span><br></pre></td></tr></table></figure>
+
+<p>Things to avoid when using macros:</p>
+<ol>
+<li>macros that affect control flow:</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO(x)                                  \</span></span><br><span class="line"><span class="meta">        do &#123;                                    \</span></span><br><span class="line"><span class="meta">                <span class="meta-keyword">if</span> (blah(x) &lt; 0)                \</span></span><br><span class="line"><span class="meta">                        return -EBUGGERED;      \</span></span><br><span class="line"><span class="meta">        &#125; while (0)</span></span><br></pre></td></tr></table></figure>
+
+<p>is a very bad idea. It looks like a function call but exits the calling function; don’t break the internal parsers of those who will read the code.</p>
+<ol start="2">
+<li>macros that depend on having a local variable with a magic name:</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO(val) bar(index, val)</span></span><br></pre></td></tr></table></figure>
+
+<p>might look like a good thing, but it’s confusing as hell when one reads the code and it’s prone to breakage from seemingly innocent changes.</p>
+<ol start="3">
+<li><p>macros with arguments that are used as l-values: FOO(x) = y; will bite you if somebody e.g. turns FOO into an inline function.</p>
+</li>
+<li><p>forgetting about precedence: macros defining constants using expressions must enclose the expression in parentheses. Beware of similar issues with macros using parameters.</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONSTANT 0x4000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONSTEXP (CONSTANT | 3)</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>namespace collisions when defining local variables in macros resembling functions:</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO(x)                          \</span></span><br><span class="line"><span class="meta">(&#123;                                      \</span></span><br><span class="line"><span class="meta">        typeof(x) ret;                  \</span></span><br><span class="line"><span class="meta">        ret = calc_ret(x);              \</span></span><br><span class="line"><span class="meta">        (ret);                          \</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>ret is a common name for a local variable - __foo_ret is less likely to collide with an existing variable.</p>
+<p>The c manual deals with macros exhaustively. The gcc internals manual also covers RTL which is used frequently with assembly language in the kernel.</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span><a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a></span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/misc/"># misc</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Khue Nguyen | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
