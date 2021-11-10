@@ -1,11 +1,12 @@
 # Header
-navname: Home
+navname: Khue's Blogs
 
 # navigatior items
 nav:
+  Home: /home
   Posts: /archives
-  # Categories: /category
-  # Tags: /tag
+  Categories: /category
+  Tags: /tag
   Projects: /projects
   About: /about
 
@@ -35,7 +36,7 @@ links:
   # RSS:
   # AliPay:
   # ZhiHu:
-  # LinkedIn:
+  LinkedIn: https://www.linkedin.com/in/khue-nguyen-75a22b21b
   # FaceBook:
   # Twitter:
   # Skype:
@@ -62,7 +63,7 @@ post_meta_enable: true
 
 post_author_enable: true
 post_date_enable: true
-post_category_enable: true
+post_category_enable: false
 ## Post copyright
 post_copyright_enable: true
 
