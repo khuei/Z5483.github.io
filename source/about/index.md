@@ -6,7 +6,7 @@ date: 2021-11-08 10:21:36
 ### PROFILE
 
 Software Developer
-Undergraduate Computer Science Student at Clemson University
+Freshman Undergraduate Computer Science Student at Clemson University
 
 ### EXPERIENCE
 

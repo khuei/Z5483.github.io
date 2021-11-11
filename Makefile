@@ -1,6 +1,6 @@
 .POSIX:
 
-all: build test
+all: build
 
 build:
 	hexo generate --deploy
