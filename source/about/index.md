@@ -33,8 +33,18 @@ Clemson University - Bachelor of Computer Science (2021 - present)
   - Python
   - Rust
 - Tools:
-  - Hypertext: HTML/CSS, Markdown, LaTeX
-  - Shell: POSIX sh, Zsh, Bash
+  - Operating System:
+    - Linux
+    - OpenBSD
+    - Windows
+  - Hypertext:
+    - HTML/CSS
+    - Markdown
+    - LaTeX
+  - Shell:
+    - POSIX sh
+    - Zsh
+    - Bash
   - Version Control: Git
 - Spoken languages:
   - English
