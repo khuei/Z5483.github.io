@@ -1,5 +1,5 @@
 # Header
-navname: Khue's Blogs
+navname: Khue
 
 # navigatior items
 nav:
@@ -27,16 +27,16 @@ avatar: /image/avatar.jpeg
 links:
   Blog: /archives
   # Category:
-  # Tags: 
+  # Tags:
   # Link:
-  # Resume:
+  Resume: /pdf/resume.pdf
   # Publish:
   # Trophy:
   # Gallery:
   # RSS:
   # AliPay:
   # ZhiHu:
-  LinkedIn: https://www.linkedin.com/in/khue-nguyen-75a22b21b
+  LinkedIn: https://www.linkedin.com/in/khuen
   # FaceBook:
   # Twitter:
   # Skype:
@@ -45,8 +45,8 @@ links:
   # Sketch:
   # Gitlab:
   # Dribbble:
-  Instagram: https://instagram.com/not_khue
-  Reddit: https://reddit.com/u/ILovePuppyCat
+  # Instagram:
+  # Reddit:
   # YouTube:
   # QQ:
   # Weibo:
@@ -63,7 +63,7 @@ post_meta_enable: true
 
 post_author_enable: true
 post_date_enable: true
-post_category_enable: true
+post_category_enable: false
 ## Post copyright
 post_copyright_enable: true
 
