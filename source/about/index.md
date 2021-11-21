@@ -32,20 +32,23 @@ Clemson University - Bachelor of Computer Science (2021 - present)
   - Perl
   - Python
   - Rust
+  - Shell
+    - POSIX sh
+    - Zsh
+    - Bash
+- Hypertext Languages:
+  - HTML/CSS
+  - Markdown
+  - LaTeX
 - Tools:
+  - Version Control:
+    - Git
+    - Mercurial
+    - Subversion
   - Operating System:
     - Linux
     - OpenBSD
     - Windows
-  - Hypertext:
-    - HTML/CSS
-    - Markdown
-    - LaTeX
-  - Shell:
-    - POSIX sh
-    - Zsh
-    - Bash
-  - Version Control: Git
 - Spoken languages:
   - English
   - Vietnamese
