@@ -5,8 +5,8 @@ navname: Khue
 nav:
   Home: /home
   Posts: /archives
-  Categories: /category
-  Tags: /tag
+  # Categories: /category
+  # Tags: /tag
   Projects: /projects
   About: /about
 
@@ -26,8 +26,8 @@ avatar: /image/avatar.jpeg
 ## Unused key can be commented out.
 links:
   Blog: /archives
-  # Category:
-  # Tags:
+  # Category: /category
+  # Tags: /tag
   # Link:
   Resume: /pdf/resume.pdf
   # Publish:

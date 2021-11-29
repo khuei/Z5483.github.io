@@ -10,7 +10,7 @@ Freshman Undergraduate Computer Science Student at Clemson University
 
 ### EXPERIENCE
 
-#### Lead Programmer, West Ashley Robotics Team: Charleston, SC, US - (2018 - 2021)
+#### Lead Programmer, Warp Drive Robotics Team: Charleston, SC, US - (2018 - 2021)
 
 Coder and mentor working on developing programs for VEX robots - UX/UI design, motion/tracking algorithms, and sensor controllers - in addition to managing engineering journal.
 
