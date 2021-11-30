@@ -3,27 +3,27 @@ title: About
 date: 2021-11-08 10:21:36
 ---
 
-### PROFILE
+## PROFILE
 
 Software Developer
 Freshman Undergraduate Computer Science Student at Clemson University
 
-### EXPERIENCE
+## EXPERIENCE
 
-#### Lead Programmer, Warp Drive Robotics Team: Charleston, SC, US - (2018 - 2021)
+### Lead Programmer, Warp Drive Robotics Team: Charleston, SC, US - (2018 - 2021)
 
 Coder and mentor working on developing programs for VEX robots - UX/UI design, motion/tracking algorithms, and sensor controllers - in addition to managing engineering journal.
 
-#### Programmer, BCUZ Robotics: Clemson, SC, US - (2021 - present)
+### Programmer, BCUZ Robotics: Clemson, SC, US - (2021 - present)
 
 Coder working on developing efficient programs for VEX robots
 
-### EDUCATION
+## EDUCATION
 
 West Ashley High School - High School Diploma (2017 - 2021)
 Clemson University - Bachelor of Computer Science (2021 - present)
 
-### SKILLS
+## SKILLS
 
 - Programming languages:
   - C
@@ -53,7 +53,7 @@ Clemson University - Bachelor of Computer Science (2021 - present)
   - English
   - Vietnamese
 
-### MISC
+## MISC
 
 Email: Z5483Y@gmail.com
 GPG Key: [public key](./khuen-public-key.gpg)
