@@ -14,10 +14,6 @@ Freshman Undergraduate Computer Science Student at Clemson University
 
 Coder and mentor working on developing programs for VEX robots - UX/UI design, motion/tracking algorithms, and sensor controllers - in addition to managing engineering journal.
 
-### Programmer, BCUZ Robotics: Clemson, SC, US - (2021 - present)
-
-Coder working on developing efficient programs for VEX robots
-
 ## EDUCATION
 
 West Ashley High School - High School Diploma (2017 - 2021)
