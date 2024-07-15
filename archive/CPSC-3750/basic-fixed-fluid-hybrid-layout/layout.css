@@ -1,0 +1,132 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: PeachPuff;
+}
+
+header {
+  float: left;
+  min-height: 8vh;
+  min-height: 8dvh;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 12vh;
+  min-height: 12dvh;
+  font-size: 1.0em;
+  background-color: #cccccc;
+  text-align: left;
+}
+
+footer ul {
+  padding-right: 4vw;
+  text-decoration: none;
+}
+
+footer h2 {
+  margin-bottom: -0.5vh;
+  margin-left: 1.4vw;
+}
+
+footer li a:link, #nav li a:visited {
+  font-size: 1.0em;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+footer li a:hover, #nav li a:active {
+  font-size: 1.0em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+#footer_left_side {
+  padding-left: 4vw;
+}
+
+#footer_left_side span {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+#footer_right_side {
+  padding-right: 10vw;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 79vh;
+  min-height: 79dvh;
+  overflow: hidden;
+}
+
+#left_side {
+  position: relative;
+  width: 25%;
+  background-color: Orange;
+  font-size: 1.4em;
+}
+
+#right_side {
+  position: relative;
+  float: left;
+  font-size: 1.4em;
+  width: 21%;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: DarkViolet;
+
+}
+
+#content_area {
+  font-size: 1.4em;
+  position: relative;
+  float: left;
+  width: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: PeachPuff;
+}
+
+h1 {
+  margin: 0;
+}
+
+#left_side ul {
+  list-style: none;
+  margin: 2em 0em 0em 0.2em;
+  padding: 0em;
+}
+
+#left_side li a:link, #nav li a:visited {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.2em 0em 0.2em 0.2em;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+#left_side li a:hover, #nav li a:active {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.2em 0em 0.2em 0.8em;
+  color: white;
+  text-decoration: none;
+  display: block;
+}

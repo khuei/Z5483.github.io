@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <title>Array Sorting Example</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Sorting String Arrays</h1>
+    </center>
+    <section style="display: flex; min-height: 70vh; min-height: 70dvh;">
+      <div style="margin: 0 auto 0 auto">
+        <p>Enter two or more names in the field below,
+        and the sorted list of names will appear in the
+        textarea.</p>
+        <form name="theform">
+          Name:
+          <input type="text" id="input-text" name="newname" value="" size="20">
+          <input type="button" id="enter-btn" name="addname" value="Add"
+          onclick="SortNames();">
+          <br/>
+          <h2>Sorted Names</h2>
+          <textarea cols="60" rows="10" name="sorted">
+            The sorted names will appear here.
+          </textarea>
+        </form>
+        <script type="text/javascript" src="sort.js"></script>
+      </div>
+    </section>
+    <footer>
+      <a href="#top" class="footer-up-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="60"
+          height="60" viewBox="0 0 512 512"><path fill="none"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg>
+        <span>Back to The Top</span>
+      </a>
+      <div>
+        <span>Email me: <a href="mailto:khuen@clemson.edu">khuen@clemson.edu</a></span>
+        <a href="#top" style="text-decoration:none;font-style:normal"><b>khuen</b></a>
+      </div>
+    </footer>
+  </body>
+</html>

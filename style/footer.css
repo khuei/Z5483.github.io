@@ -1,0 +1,20 @@
+.footer-up-button {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  padding-top: 2%;
+}
+
+.footer-up-button:hover {
+  color: brown;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  padding-top: 2%;
+}

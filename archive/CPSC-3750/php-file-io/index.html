@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <title>PHP File I/O | khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <center>
+      <h1>PHP File I/O</h1>
+      <form action="numbers.php" method="post">
+        <input type="text" id="numberInput" name="numberInput" pattern="^[0-9\s]*$" title="Only numbers and spaces are allowed">
+        <br><br>
+        <button type="submit" value="Submit" id="submitBtn" name="submitBtn">CHECK THESE NUMBERS</button>
+        <br><br>
+        <button value="clicked" id="armstrongBtn" name="armstrongBtn">ARMSTRONG</button>
+        <button value="clicked" id="fibonacciBtn" name="fibonacciBtn">FIBONACCI</button>
+        <button value="clicked" id="primeBtn" name="primeBtn">PRIME</button>
+        <button value="clicked" id="noneBtn" name="noneBtn">NONE</button>
+        <button value="clicked" id="resetBtn" name="resetBtn">RESET</button>
+      </form>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+header {
+  margin: 0;
+  font-size: 1.0em;
+  height: 10vh;
+  height: 10dvh;
+  text-align: center;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  min-height: 40dvh;
+  margin-bottom: 5vh;
+  align-content: center;
+  gap: 5vh;
+}
+
+.event-box {
+  background-color: PeachPuff;
+  margin: 0 auto 0 auto;
+  min-height: 300px;
+  width: 600px;
+  text-align: center;
+}
+
+.event-box h2 {
+  margin-top: 1vh;
+}
+
+#animation-box {
+  height: 100px;
+  width: 100px;
+  background-color: Black;
+  position: relative;
+  animation-play-state: paused;
+  animation-name: moveRight;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 2;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 100px);
+    }
+}
+
+#animation-btn {
+  margin-bottom: 1vh;
+}
+
+.target-box {
+  height: 100px;
+  width: 200px;
+}
+
+#red-target-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  background-color: Red;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+#blue-target-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  background-color: Blue;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+#draggableItem {
+  margin-bottom: 20px;
+}
+</style>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <title>Week 6 Group Assignment: Event — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Week 6 Group Assignment: Event</h1>
+    </center>
+    <section id="content">
+      <div class="event-box">
+        <h2>Animation Event</h2>
+        <div id="animation-box"></div>
+        <br>
+        <button id="animation-btn">Start Animation</button>
+        <div id="animation-label"></div>
+      </div>
+      <div class="event-box">
+        <h2>Drag Event</h2>
+        <div class="target-box" id="red-target-box">Red Drop Box</div>
+        <div class="target-box" id="blue-target-box">Blue Drop Box</div>
+        <button draggable="true" id="draggable-item">Drag Me To Either Drop Box</button>
+        <div id="drag-label"></div>
+        <div id="drag-location-label"></div>
+      </div>
+      <div class="event-box">
+        <h2>Input Event</h2>
+        <label>Write: </label>
+        <input type="text" id="input-box"></input>
+        <br><br>
+        <div id="input-label">The user is:<br>The user wrote:</div>
+      </div>
+      <div class="event-box">
+        <h2>Mouse Event</h2>
+        <button id="click-btn">Click me</button>
+        <br><br>
+        <div id="mouse-label"></div>
+        <div id="mouse-location-label">Mouse Position: </div>
+      </div>
+      <div class="event-box">
+        <h2>Focus Event</h2>
+        <label>Write: </label>
+        <input type="text" id="focus-box"></input>
+        <br><br>
+        <div id="focus-label">Is the user focused on the input box? No</div>
+      </div>
+    </section>
+    <script>
+      let square = document.getElementById("animation-box");
+      let animationLabel = document.getElementById("animation-label");
+
+      document.getElementById("animation-btn").addEventListener(
+        "click",
+        function() {
+          square.style.animation = "none";
+          void square.offsetWidth;
+          square.style.animation = "moveRight 2s linear 2";
+          square.style.animationPlayState = "Running";
+        }
+      );
+
+      square.addEventListener(
+        "animationstart",
+        function() {
+          animationLabel.textContent = "Animation is Starting";
+        }
+      );
+
+      square.addEventListener(
+        "animationiteration",
+        function() {
+          animationLabel.textContent = "Animation Is Repeating";
+        }
+      );
+
+      square.addEventListener(
+        "animationend",
+        function(event) {
+          animationLabel.textContent = "Animation has Ended (Elapsed Time: " + event.elapsedTime + " sec)";
+          square.style.animationPlayState = "Paused";
+        }
+      );
+
+      let dragLabel = document.getElementById("drag-label");
+      let dragLocationLabel = document.getElementById("drag-location-label");
+
+      document.getElementById("draggable-item").addEventListener(
+        "drag",
+        function(e) {
+          dragLabel.textContent = "Item is being dragged";
+        }
+      );
+
+      document.getElementById("draggable-item").addEventListener(
+        "dragstart",
+        function(e) {
+          e.dataTransfer.setData("text/plain", draggable.id);
+        }
+      );
+
+      document.getElementById("draggable-item").addEventListener(
+        "dragend",
+        function(e) {
+          dragLabel.textContent = "The user has finished dragging the item";
+        }
+      );
+
+      document.getElementById("blue-target-box").addEventListener(
+        "dragover",
+        function(e) {
+          e.preventDefault();
+        }
+      );
+
+      document.getElementById("blue-target-box").addEventListener(
+        "drop",
+        function(e) {
+          e.preventDefault();
+          const data = e.dataTransfer.getData("text/plain");
+          const draggedElement = document.getElementById(data);
+          dragLocationLabel.textContent = "Item is dropped into blue drop box";
+          droppable.appendChild(draggedElement);
+        }
+      );
+
+      document.getElementById("red-target-box").addEventListener(
+        "dragover",
+        function(e) {
+          e.preventDefault();
+        }
+      );
+
+      document.getElementById("red-target-box").addEventListener(
+        "drop",
+        function(e) {
+          e.preventDefault();
+          const data = e.dataTransfer.getData("text/plain");
+          const draggedElement = document.getElementById(data);
+          dragLocationLabel.textContent = "Item is dropped into red drop box";
+          droppable.appendChild(draggedElement);
+        }
+      );
+
+      document.getElementById("input-box").addEventListener(
+        "input",
+        function(e) {
+          document.getElementById("input-label").innerHTML = "The user is: " + e.inputType
+            + "<br>The user wrote: " + document.getElementById("input-box").value;
+        }
+      );
+
+      let clickBtn = document.getElementById("click-btn");
+      let mouseLabel = document.getElementById("mouse-label");
+      let mouseLocationLabel = document.getElementById("mouse-location-label");
+
+      clickBtn.addEventListener(
+        "click",
+        function() {
+          mouseLabel.innerHTML = "The user left clicks on the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "contextmenu",
+        function() {
+          mouseLabel.innerHTML = "The user right clicks on the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "dblclick",
+        function() {
+          mouseLabel.innerHTML = "The user double clicks on the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "mousedown",
+        function() {
+          mouseLabel.innerHTML = "The user is pressing down on the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "mouseenter",
+        function() {
+          mouseLocationLabel.innerHTML = "Mouse Position: Enter the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "mousemove",
+        function() {
+          mouseLocationLabel.innerHTML = "Mouse Position: On the button";
+        }
+      );
+
+      clickBtn.addEventListener(
+        "mouseleave",
+        function() {
+          mouseLocationLabel.innerHTML = "Mouse Position: Leave the button";
+        }
+      );
+
+      let focusBox = document.getElementById("focus-box");
+      let focusLabel = document.getElementById("focus-label");
+
+      focusBox.addEventListener(
+        "focus",
+        function() {
+          focusLabel.textContent = "Is the user focused on the input box? Yes";
+        }
+      );
+
+      focusBox.addEventListener(
+        "blur",
+        function() {
+          focusLabel.textContent = "Is the user focused on the input box? No";
+        }
+      );
+    </script>
+  </body>
+</html>

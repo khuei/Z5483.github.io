@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^$ /archive/CPSC-3750/ajax-and-handlers [L]

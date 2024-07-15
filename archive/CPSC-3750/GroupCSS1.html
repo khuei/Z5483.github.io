@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" href="../style.css">
+<style>
+/* Header Content */
+header {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  max-height: 10vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Body content */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(279, 56%, 63%);
+  min-height: 200vh;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-image: url("https://www.clemson.edu/brand/resources/logos/wordmark-paw/orange-purple.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Global Tag */
+p {
+  margin: 5%;
+  Text-align: left;
+  color: white;
+  border-style: dashed;
+  border-left: 0.2em double;
+  border-right: 0.2em dotted;
+  border-bottom: 0.2em groove;
+  border-width: 0.2em;
+  text-align: center;
+  justify-content: center;
+  width: vh;
+  height: 10vh;
+}
+
+h1 {
+  Background-color: #ff7f47;
+}
+
+/* Set alignment and color of header text */
+h.center{
+  Text-align:center;
+  Color: orange;
+}
+
+/* flex box container in body */
+.body-container {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: auto;
+  background-image: url("https://www.clemson.edu/brand/resources/logos/paw/orange.png");
+  background-repeat: repeat-x;
+  background-position: top;
+}
+
+/* Set alignment and text settings in menu */
+.name-box {
+  gap: 3vw;
+  padding: 5vw;
+  border: 0.2em solid;
+  border-radius: 2vw;
+}
+
+.name-box li {
+  display: list-item;
+  text-align: left;
+  font-size: 1.8em;
+  color: black;
+}
+</style>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/blog-list.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <title>Week 2 Group Assignment: CSS — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <div class="body-container">
+      <h1>Group 5 Week 2 Assignment</h1>
+      <ul class="name-box">
+        <li>Khue nguyen</li>
+        <li>Donovan Burton</li>
+        <li>Bartosz Rdzanek</li>
+        <li>Logan Durham</li>
+      </ul>
+      <p>This is the website we made for group 5 week 2 assignment.</p>
+    </div>
+  </body>
+</html>

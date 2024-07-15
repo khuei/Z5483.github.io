@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <title>Card Object — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Card Object</h1>
+    </center>
+    <section id="content">
+      <div id="form-box">
+        <form onsubmit="return false" id="info-form-box">
+          <h2>Information Form</h2>
+          <label>
+            Name:
+            <br>
+            <input type="text" id="name-input"></input>
+          </label>
+          <br>
+          <label>
+            Email:
+            <br>
+            <input type="text" id="email-input"></input>
+          </label>
+          <br>
+          <label>
+            Address:
+            <br>
+            <input type="text" id="address-input"></input>
+          </label>
+          <br>
+          <label>
+            Phone:
+            <br>
+            <input type="text" id="phone-input"></input>
+          </label>
+          <br>
+          <label>
+            Birthdate:
+            <br>
+            <input type="date" id="birthdate-input"></input>
+          </label>
+          <br>
+          <input type="submit" value="SUBMIT TO DISPLAY" id="submit-display-btn"></input>
+          <br>
+          <input type="submit" value="SUBMIT WITHOUT DISPLAYING" id="submit-btn"></input>
+        </form>
+        <div id="card-box">
+          <h2>Business Card</h2>
+          <button id="display-btn">DISPLAY CARDS</button>
+          <br>
+          <button id="clear-btn">CLEAR DISPLAY</button>
+          <br>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="cards.js"></script>
+  </body>
+</html>

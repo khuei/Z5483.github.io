@@ -1,0 +1,92 @@
+* {
+  font-family: 'Sudo';
+  src: url('/font/Sudo-Regular.woff2') format('woff2'),
+       url('/font/Sudo-Bold.woff2') format('woff2'),
+       url('/font/Sudo-Italic.woff2') format('woff2'),
+       url('/font/Sudo-BoldItalic.woff2') format('woff2'),
+       url('/font/Sudo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  z-index: -1;
+}
+
+nav {
+  position: relative;
+}
+
+aside {
+  max-width: 35vw;
+  max-width: 35dvw;
+  height: auto;
+  font-size: 1em;
+  padding: 1vh;
+  font-style: oblique;
+  background-color: #F7CA88;
+  border-bottom: 0.4em solid #DC9656;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+  text-align: center;
+}
+
+aside cite {
+  max-width: 35vw;
+  max-width: 35dvw;
+  font-size: 1.2em;
+  text-align: center;
+  padding-left: 3vw;
+  padding-left: 3dvw;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+
+footer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  white-space: nowrap;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: auto;
+  position: bottom 0;
+  font-size: 2em;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
+}
+
+footer div a {
+  color: white;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+hr {
+  border: 0.25vh solid;
+  width: 90vw;
+  width: 90dvw;
+  height: 0.2vh;
+  height: 0.2dvh;
+  border: 0;
+  color: black;
+  background-color: black;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  min-height: 40dvh;
+  align-content: center;
+  margin: 4vh auto 4vh auto;
+  gap: 5vh;
+}
+
+#player-box {
+  display: flex;
+  flex-direction: row;
+  height: 30vh;
+  height: 30dvh;
+  justify-content: center;
+  gap: 6vw;
+}
+
+.hand-box {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  height: 30dvh;
+  width: 300px;
+  text-align: center;
+  background-color: PeachPuff;
+}
+
+.hand-box img {
+  height: 20vh;
+  height: 20dvh;
+  width: 250px;
+  margin: auto;
+}
+
+.hand-box span {
+  font-size: 1.1em;
+  margin-top: 1vh;
+}
+
+.result-box {
+  display: flex;
+  flex-direction: column;
+  height: 12vh;
+  height: 12dvh;
+  width: 500px;
+  text-align: center;
+  background-color: PeachPuff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-box span {
+  font-size: 1.5em;
+  margin-top: 1vh;
+}
+
+#play-btn {
+  width: 25vw;
+  font-size: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold-text {
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+</style>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Rock Paper Scissor — khuen</title>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Rock Paper Scissor</h1>
+    </center>
+    <section id="content">
+      <div id="player-box">
+        <div class="hand-box">
+          <span>Player's Hand</span>
+          <img id="player-hand-image" src="images/empty.webp" alt="">
+          <span class="bold-text" id="player-hand"></span>
+        </div>
+        <div class="hand-box">
+          <span>Computer's Hand</span>
+          <img id="comp-hand-image" src="images/empty.webp" alt="">
+          <span class="bold-text" id="comp-hand"></span>
+        </div>
+      </div>
+      <div class="result-box">
+        <span>Result</span>
+        <span class="bold-text" id="result-msg"></span>
+      </div>
+      <button id="play-btn">Play Rock Paper Scissor</button>
+    </section>
+    <script type="text/javascript" src="scriptName.js"></script>
+  </body>
+</html>

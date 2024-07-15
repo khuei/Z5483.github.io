@@ -1,0 +1,113 @@
+.blog-page-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 10vh;
+  min-height: 10dvh;
+  width: 70vw;
+  width: 70dvw;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.blog-page-title h2 {
+  font-size: 2.5em;
+  margin: 1vh;
+  font-style: bolder;
+}
+
+.blog-page-title span {
+  color: black;
+  font-size: 1.5em;
+  font-style: lighter;
+}
+
+.blog-page-title hr {
+  width: 60vw;
+  width: 60dvw;
+  height: 0.1vh;
+  height: 0.1dvh;
+  margin-top: 1vh;
+  border: none;
+}
+
+.blog-page-content {
+  flex: display;
+  flex-direction: column;
+  min-height: 80vh;
+  min-height: 80dvh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-page-content h4 {
+  font-size: 1.8em;
+  font-style: italic;
+  text-align: center;
+  padding-top: 2vh;
+  padding-top: 2dvh;
+  padding-bottom: 2vh;
+  padding-bottom: 2dvh;
+}
+
+.blog-page-section {
+  width: 60vw;
+  width: 60dvw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-page-section #toc a {
+  color: black;
+  text-decoration: underline;
+}
+
+.blog-page-section h3 {
+  font-size: 2em;
+  margin-bottom: 1vh;
+}
+
+.blog-page-section p {
+  font-size: 1.5em;
+}
+
+.blog-page-section ul {
+  font-size: 1.5em;
+  list-style-type: decimal;
+}
+
+.blog-page-section img {
+  width: 40vw;
+  width: 40dvw;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-page-section cite {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.blog-page-section div {
+  width: 60vw;
+  width: 60dvw;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  gap: 2dvw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-page-section div img {
+  width: 30vw;
+  width: 30dvw;
+  height: auto;
+}
+

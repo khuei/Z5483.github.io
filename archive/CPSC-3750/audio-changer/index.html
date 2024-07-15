@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="./audio.css">
+    <title>Audio Player</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <center>
+      <h1>Audio Player</h1>
+      <span style="font-size: 1.4em">filename: 5-minutes-countdown.mp3</span>
+    </center>
+    <audio preload="auto" id="audio-player" controls>
+      <source src="./5-minutes-countdown.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <button id="rewind-btn">Rewind 5 Seconds</button>
+      <button id="play-pause-btn">Play</button>
+      <button id="forward-btn">Forward 5 Seconds</button>
+    </div>
+    <div class="buttons">
+      <button id="add-tag">Create Tag at Current Time</button>
+      <button id="delete-tag">Delete Playing Current Tag</button>
+    </div>
+    <ul>
+      <li><span>Green Background: current playing tag</span></li>
+      <li><span>Purple Background: selected tag</span></li>
+    </ul>
+    <div id="title-playlist">
+      <div class="title-item" id="fixed-title">
+        <span>Number</span>
+        <span>Name</span>
+        <span>Timestamp</span>
+        <span></span>
+      </div>
+    </div>
+    <div id="new-tag-field">
+      <h2>Create Tag Field</h2>
+      <span>Current timestamp:</span>
+      <span id="new-tag-field-time-label"></span>
+      <span>Please input a tag title:</span>
+      <input type="text" id="new-tag-title-input"></input>
+      <div style="margin: 0 auto 0 auto">
+        <button id="cancel-new-tag-field">Cancel</button>
+        <button id="close-new-tag-field">Create Tag</button>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./button.js" defer></script>
+    <script src="./titleTag.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+.blog-listing {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  min-height: 90dvh;
+  gap: 2vh;
+  padding-left: 5vw;
+  padding-left: 5dvw;
+  padding-right: 5vw;
+  padding-right: 5dvw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.blog-listing-item {
+  display: flex;
+  flex-direction: row;
+  gap: 4%;
+  min-height: 25vh;
+  min-height: 25dvh;
+  background-color: BlanchedAlmond;
+  border-bottom: 0.2em solid Tan;
+  font-size: 1.5em;
+  border-radius: 0.5em;
+}
+
+img.title-art {
+  position: absolute;
+  width: auto;
+  height: 25vh;
+  height: 25dvh;
+  overflow: hidden;
+}
+
+.blog-listing-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6vh;
+  padding-top: 1vh;
+  padding-right: 4vh;
+  min-height: 20vh;
+  min-height: 20dvh;
+  width: 85vw;
+  width: 85dvw;
+}
+
+.blog-tag {
+  color: brown;
+  font-size: 1em;
+  font-weight: bolder;
+
+}
+
+.blog-title {
+  color: black;
+  font-size: 1.5m;
+  font-weight: bold;
+}
+
+.blog-synopsis {
+  color: black;
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+.blog-subscript {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  min-height: 5vh;
+  min-height: 5dvh;
+}
+
+.blog-subscript-text {
+  color: black;
+  font-size: 0.8em;
+  font-weight: lighter;
+  font-style: italic;
+  line-height: 3vh;
+  line-height: 3dvh;
+}
+

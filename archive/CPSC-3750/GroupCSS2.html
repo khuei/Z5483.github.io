@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" href="../style.css">
+<style>
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  #toc {
+    font-size: 0.8em;
+    position: fixed;
+    float: left;
+    background-color: LightSalmon;
+    width: 12vw;
+    width: 12dvw;
+    margin-top: 35vh;
+    margin-left: 0;
+    padding-left: 1vw;
+    padding-left: 1dvw;
+    white-space: wrap;
+    overflow-wrap: break-word;
+  }
+
+  nav ion-icon {
+    font-size: 1.2em;
+  }
+
+  nav #table-of-content ol {
+    margin-left: -2vw;
+    margin-left: -2dvw;
+  }
+
+  nav #table-of-content ol li:first-child {
+    list-style-type: none;
+    color: black;
+    text-decoration: underline;
+  }
+
+  nav #table-of-content li a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 80vh;
+    min-height: 80dvh;
+    background-color: PeachPuff;
+    flex-grow: 1;
+  }
+
+  body #content {
+    font-size: 1em;
+    position: relative;
+    float: left;
+    margin-left: 15vw;
+    margin-left: 15dvw;
+    width: 75vw;
+    width: 75dvw;
+    min-height: 80vh;
+    min-height: 80dvh;
+  }
+
+  .icons ion-icon {
+    font-size: 5em;
+  }
+
+  .responsive-table {
+    width: 60vw;
+    width: 60dvw;
+    overflow-x: auto;
+  }
+
+  .responsive-table table,
+  .responsive-table th,
+  .responsive-table td {
+    border-collapse: collapse;
+    text-align: center;
+    border: 0.1em solid;
+    white-space: nowrap;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .nonresponsive-table {
+    width: 75vw;
+    width: 75dvw;
+  }
+
+  .nonresponsive-table table,
+  .nonresponsive-table th,
+  .nonresponsive-table td {
+    border-collapse: collapse;
+    text-align: center;
+    border: 0.1em solid;
+    white-space: wrap;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .image-gallery {
+    padding-bottom: 2vh;
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    margin-top: 5vh;
+    height: 10vh;
+    color: white;
+    background-color: black;
+    justify-content: center;
+  }
+</style>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/blog-list.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <title>Week 3 Group Assignment: More CSS — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <nav id="toc">
+      <section id="table-of-content">
+        <ol>
+          <li><ion-icon name="menu-outline"></ion-icon></li>
+          <li value="1"><a href="#icons">Icons</a></li>
+          <li value="2"><a href="#ordered-list">Ordered List</a></li>
+          <li value="3"><a href="#unordered-list">Unordered List</a></li>
+          <li value="4"><a href="#responsive-table">Responsive Table</a></li>
+          <li value="5"><a href="#nonresponsive-table">Nonresponsive Table</a></li>
+          <li value="6"><a href="#gallery">Image Gallery</a></li>
+        </ol>
+      </section>
+    </nav>
+    <section id="content">
+      <div id="icons" class="icons">
+        <h2>Icons</h2>
+        <ion-icon name="airplane-outline"></ion-icon>
+        <ion-icon name="construct-outline"></ion-icon>
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-icon name="desktop-outline"></ion-icon>
+        <ion-icon name="finger-print-outline"></ion-icon>
+      </div>
+      <div id="ordered-list" class="ordered-list">
+        <h2>Ordered List</h2>
+        <ol>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+          <li>List item 4</li>
+          <li>List item 5</li>
+          <li>List item 6</li>
+          <li>List item 7</li>
+          <li>List item 8</li>
+        </ol>
+      </div>
+      <div id="unordered-list" class="unordered-list">
+        <h2>Unordered List</h2>
+        <ul>
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+          <li>List item 4</li>
+          <li>List item 5</li>
+          <li>List item 6</li>
+          <li>List item 7</li>
+          <li>List item 8</li>
+        </ul>
+      </div>
+      <div id="responsive-table" class="responsive-table">
+        <h2>Responsive Table</h2>
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Major</th>
+            <th>Classification</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>Khue</td>
+            <td>Nguyen</td>
+            <td>Computer Science</td>
+            <td>Senior</td>
+            <td>843-557-3014</td>
+            <td>khuen@clemson.com</td>
+          </tr>
+        </table>
+      </div>
+      <div id="nonresponsive-table" class="nonresponsive-table">
+        <h2>Nonresponsive Table</h2>
+        <table>
+          <tr>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Major</th>
+            <th>Classification</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>Khue</td>
+            <td>Nguyen</td>
+            <td>Computer Science</td>
+            <td>Senior</td>
+            <td>843-557-3014</td>
+            <td>khuen@clemson.com</td>
+          </tr>
+        </table>
+      </div>
+      <div id="gallery" class="image-gallery">
+        <h2>Image Gallery</h2>
+        <div style="margin: 2%">
+          <img src="https://www.clemson.edu/brand/resources/logos/wordmark-primary/clemson+paw_orange_rgb.png">
+        </div>
+        <div style="background-color: Purple;margin: 2%">
+          <img src="https://www.clemson.edu/brand/resources/logos/wordmark-primary/clemson+paw_white+orange_rgb.png">
+        </div>
+        <div style="margin: 2%">
+          <img src="https://www.clemson.edu/brand/resources/logos/wordmark-primary/clemson+paw_regalia+orange.png">
+        </div>
+        <div style="background-color: DarkOrange;margin: 2%">
+          <img src="https://www.clemson.edu/brand/resources/logos/wordmark-primary/clemson+paw_regalia+white_rgb.png">
+        </div>
+        <div style="background-color: DarkOrange;margin: 2%">
+          <img src="https://www.clemson.edu/brand/resources/logos/wordmark-primary/clemson+paw_white_rgb.png">
+        </div>
+      </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  </body>
+  <footer>
+    <span>&copy; 2023 khuen.net. All Rights Reserved.</span>
+  </footer>
+</html>

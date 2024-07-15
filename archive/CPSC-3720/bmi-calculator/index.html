@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh;
+  min-height: 75dvh;
+  align-content: center;
+  margin: 4vh auto 4vh auto;
+  gap: 5vh;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  justify-content: center;
+}
+
+.box {
+  background-color: BlanchedAlmond;
+  border-bottom: 0.2em solid Tan;
+  border-radius: 0.5em;
+}
+
+#input-box {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: auto;
+  text-align: center;
+}
+
+#input-box hr {
+  color: Tan;
+  background-color: Tan;
+  width: 30vw;
+}
+
+#input-box-line {
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  margin: 0.4em auto 0.4em auto;
+}
+
+#input-box-line label {
+  display: block;
+  float: left;
+  width: 12vw;
+  font-size: 1em;
+}
+
+#input-box-line input {
+  display: block;
+  float: right;
+  width: 8vw;
+  font-size: 1em;
+}
+
+#input-box button {
+  font-size: 1.3em;
+  margin: 2em auto 2em auto;
+}
+
+#result-box {
+  width: 30vw;
+  height: auto;
+  text-align: center;
+}
+
+#bmi-result {
+  font-size: 6em;
+}
+
+#bmi-classification {
+  font-size: 1.5em;
+}
+
+#info-box {
+  width: 70vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#info-box p {
+  padding: 0 1em 1em 1em;
+  font-size: 1.5em;
+}
+
+</style>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="scriptName.js"></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <title>BMI Calculator — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Body Mass Index (BMI) Calculator</h1>
+    </center>
+    <section id="content">
+      <section id="calculator">
+        <div class="box" id="input-box">
+          <center>
+            <h2>Input</h2>
+          </center>
+          <div id="input-box-line">
+            <label>Weight (lbs):</label>
+            <input type="number" id="weight-input" name="weight">
+          </div>
+          <div id="input-box-line">
+            <label>Height (in):</label>
+            <input type="number" id="height-input" name="height">
+          </div>
+          <button onclick="getInput();calcBMI();outputResult()">Calculate My BMI</button>
+        </div>
+        <div class="box" id="result-box">
+          <center>
+            <h2>Result</h2>
+          </center>
+          <span id="bmi-result"></span>
+          <br>
+          <span id="bmi-classification"></span>
+        </div>
+      </section>
+      <div class="box" id="info-box">
+        <center>
+          <h2>What is Body Mass Index (BMI)?</h2>
+        </center>
+        <p>Body Mass Index (BMI) is a numerical measure used to assess an
+        individual's body composition based on height and weight. BMI is
+        categorized into 5 bands: under 18.5 (underweight), 18.5 to 24.9
+        (healthy range), 25 to 29.9 (overweight), 30 to 39.9 (obesity), and 40
+        or higher (severe obesity). Its advantage lies in its simplicity and
+        accessibility, as it provides a quick and cost-effective way to
+        estimate a person's overall body fat and categorize them as
+        underweight, average weight, overweight, or obese. BMI can be useful
+        for identifying potential health risks related to weight, such as heart
+        disease and diabetes. However, BMI has significant limitations. It does
+        not consider factors like muscle mass, bone density, or body
+        composition, leading to inaccurate assessments, particularly for
+        athletes and older individuals. Additionally, it does not consider fat
+        distribution, which can be crucial for evaluating health risks
+        associated with abdominal obesity. Therefore, while BMI can serve as a
+        helpful initial screening tool, it should be interpreted cautiously and
+        alongside other health indicators for a more comprehensive assessment
+        of an individual's health.</p>
+      </div>
+    </section>
+  </body>
+</html>

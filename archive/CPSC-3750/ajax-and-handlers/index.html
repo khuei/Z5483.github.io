@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <title>Ajax and Handlebars | khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/handlebars/dist/handlebars.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+  </head>
+  <header>
+  </header>
+  <body>
+    <center>
+    <h1>Ajax and Handlebars</h1>
+    <button id="btn">Fetch Info for 3 New Animals</button>
+
+    <div id="animal-info"></div>
+    <script src="./scriptName.js"></script>
+
+    <script id="animal-template" type="text/x-handlebars-template">
+      {{#each this}}
+      <p>
+        {{name}} is a {{species}} that likes to eat {{#each
+        foods.likes}}{{this}}{{#unless @last}}, {{/unless}}{{/each}} and
+        dislikes {{#each foods.dislikes}}{{this}}{{#unless @last}},
+        {{/unless}}{{/each}}.
+      </p>
+  {{/each}}
+    </script>
+    </center>
+  </body>
+</html>

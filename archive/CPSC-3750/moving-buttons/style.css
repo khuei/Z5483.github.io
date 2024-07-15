@@ -1,0 +1,51 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: PeachPuff;
+}
+
+#btn-header {
+  height: 15vh;
+  height: 15dvh;
+  color: Black;
+  background-color: PeachPuff;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+header button {
+  margin: 0;
+  padding: 0;
+}
+
+#viewing-area {
+  position: relative;
+  height: 85vh;
+  height: 85dvh;
+  width: 100vw;
+  width: 100dvw;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: Black;
+}
+
+.btn {
+  color: Black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: Black;
+  transition: left 0.5s linear;
+}

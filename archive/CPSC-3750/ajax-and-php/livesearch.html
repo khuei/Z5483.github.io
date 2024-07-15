@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<style>
+ul {
+  list-style: none;
+}
+</style>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="ajax.js"></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <title>Capitol Search | khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <center>
+      <h1>Capitol Search</h1>
+      <p><strong>Input a State Name:</strong>
+      <input type="text" size="40" id="searchlive"></p>
+      <div id="results">
+        <ul id="list">
+          <li>[Search results will display here.]</li>
+        </ul>
+      </div>
+      <center>
+     <script type="text/javascript" src="search.js"></script>
+   </body>
+</html>

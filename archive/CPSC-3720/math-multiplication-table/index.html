@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+header {
+  margin: 0;
+  font-size: 1.0em;
+  height: 3vh;
+  height: 3dvh;
+  text-align: center;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  min-height: 40dvh;
+  align-content: center;
+  text-align: center;
+  margin: 4vh auto 4vh auto;
+  gap: 5vh;
+}
+
+#content table {
+  margin: 0 auto 0 auto;
+  border-color: black;
+  border-collapse: collapse;
+  width: 80vw;
+  width: 80dvw;
+}
+
+#content th,
+#content td {
+  border: 1px solid Black;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:first-child {
+    background-color: Black;
+    color: White;
+    font-weight: bold;
+}
+
+td:first-child {
+    background-color: Black;
+    color: White;
+    font-weight: bold;
+  }
+
+#input-box {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  background-color: PeachPuff;
+}
+
+#input-box-line {
+  font-size: 1.4em;
+  display: flex;
+  width: 300px;
+  flex-direction: row;
+  margin: 0.4em auto 0.4em auto;
+}
+
+#input-box-line label {
+  margin-right: auto;
+  width: 200px;
+  font-size: 0.6em;
+}
+
+#input-box-line input {
+  margin-left: auto;
+  width: 100px;
+  font-size: 0.6em;
+}
+
+#generate-btn {
+  margin: 2vh auto 0 auto;
+  width: 200px;
+  font-size: 0.8em;
+}
+</style>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/archive.css">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/style/footer.css">
+    <script type="text/javascript" src="scriptName.js"></script>
+    <title>Math Multiplication Table — khuen</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
+    <center>
+      <h1>Math Multiplication Table Generator</h1>
+    </center>
+    <section id="content">
+      <div id="input-box">
+        <h2>Table Parameter Input</h2>
+        <div id="input-box-line">
+          <label>Number of Row:</label>
+          <input type="number" id="row-input" name="rowNum">
+        </div>
+        <div id="input-box-line">
+          <label>Number of Column:</label>
+          <input type="number" id="column-input" name="columnNum">
+        </div>
+        <button id="generate-btn">Generate Table</button>
+      </div>
+    </section>
+    <script type="text/javascript" src="multiplicationTable.js"></script>
+  </body>
+</html>
