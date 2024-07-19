@@ -8,21 +8,16 @@
     <link rel="stylesheet" href="/style/blog-list.css">
     <link rel="stylesheet" href="/style/footer.css">
     <title>Home — khuen</title>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <header>
-      <h1 class="header-logo">
-        <a href="/" class="header-menu-item">khuen</a>
-      </h1>
-      <nav>
-        <ul class="header-menu">
-          <li><a href="/" class="header-menu-item" id="header-item-home">Home</a></li>
-          <li><a href="/blog/" class="header-menu-item" id="header-item-blog">Blog</a></li>
-          <li><a href="/about-me.html" class="header-menu-item" id="header-item-about-me">About Me</a></li>
-        </ul>
-      </nav>
     </header>
+    <script>
+      $(document).ready(function() {
+        $("header").load("/header.html");
+      });
+    </script>
     <section class="profile">
       <svg width="20vw" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512
         512"><path d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19
