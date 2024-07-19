@@ -18,3 +18,25 @@
   font-size: 2em;
   padding-top: 2%;
 }
+
+.footer-body-link-menu {
+  display:flex;
+  list-style: none;
+  gap: 3vw;
+  gap: 3dvw;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding-right: 4%;
+}
+
+.footer-image-anchor {
+  color: White;
+  text-decoration: none;
+}
+
+.footer-image-anchor:hover {
+  color: Brown;
+  text-decoration: underline;
+  fill: brown;
+}
