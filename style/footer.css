@@ -19,6 +19,20 @@
   padding-top: 2%;
 }
 
+.footer-site-map {
+  display:flex;
+  list-style: none;
+  gap: 3vw;
+  gap: 3dvw;
+  font-size: 1.6em;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding-right: 4%;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
 .footer-body-link-menu {
   display:flex;
   list-style: none;
@@ -28,6 +42,7 @@
   justify-content: center;
   align-content: center;
   padding-right: 4%;
+  margin-bottom: 2dvh;
 }
 
 .footer-image-anchor {
