@@ -11,7 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fff5d7;
+  background: #F8F8F8;
   min-height: 100vh;
   min-height: 100dvh;
   z-index: -1;
@@ -28,8 +28,9 @@ aside {
   font-size: 1em;
   padding: 1vh;
   font-style: oblique;
-  background-color: #F7CA88;
-  border-bottom: 0.4em solid #DC9656;
+  color: #F8F8F8;
+  background-color: #383838;
+  border-bottom: 0.4em solid #585858;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1em;

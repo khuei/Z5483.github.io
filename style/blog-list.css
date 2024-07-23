@@ -1,8 +1,8 @@
 .blog-listing {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
-  min-height: 90dvh;
+  min-height: 96vh;
+  min-height: 96dvh;
   gap: 2vh;
   padding-left: 5vw;
   padding-left: 5dvw;
@@ -18,8 +18,8 @@
   gap: 4%;
   min-height: 25vh;
   min-height: 25dvh;
-  background-color: BlanchedAlmond;
-  border-bottom: 0.2em solid Tan;
+  background-color: #181818;
+  border-bottom: 0.2em #585858;
   font-size: 1.5em;
   border-radius: 0.5em;
 }
@@ -45,20 +45,20 @@ img.title-art {
 }
 
 .blog-tag {
-  color: brown;
+  color: #BA8BAF;
   font-size: 1em;
   font-weight: bolder;
 
 }
 
 .blog-title {
-  color: black;
+  color: #D8D8D8;
   font-size: 1.5m;
   font-weight: bold;
 }
 
 .blog-synopsis {
-  color: black;
+  color: #D8D8D8;
   font-size: 1em;
   font-weight: lighter;
 }
@@ -72,7 +72,7 @@ img.title-art {
 }
 
 .blog-subscript-text {
-  color: black;
+  color: #D8D8D8;
   font-size: 0.8em;
   font-weight: lighter;
   font-style: italic;
