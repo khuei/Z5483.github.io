@@ -9,20 +9,73 @@
     <link rel="stylesheet" href="/style/footer.css">
     <title>About Me — khuen</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      .terminal-menu .terminal-menu-item {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        white-space: nowrap;
+      }
+      .terminal-menu .terminal-menu-item.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
   <body>
-    <header>
-    </header>
+    <header></header>
     <script>
       $(document).ready(function() {
         $("header").load("/header.html");
+
+        // Function to type out "ls"
+        function typeLs(text, index) {
+          if (index < text.length) {
+            document.querySelector('#typing-text b').innerHTML += text.charAt(index);
+            setTimeout(function() {
+              typeLs(text, index + 1);
+            }, 300); // Delay between each letter
+          } else {
+            setTimeout(function() {
+              document.getElementById('typing-time').style.visibility = 'visible';
+              setTimeout(function() {
+                showMenuItems();
+              }, 500); // Delay before showing menu items
+            }, 500); // Delay before showing "0.02s"
+          }
+        }
+
+        // Function to show and type menu items
+        function showMenuItems() {
+          var items = document.querySelectorAll('.terminal-menu .terminal-menu-item');
+          items.forEach((item, idx) => {
+            setTimeout(() => {
+              item.classList.add('show');
+              typeMenuItem(item, 0, item.textContent);
+            }, idx * 100); // Staggered delay for each item
+          });
+        }
+
+        // Function to type out each menu item letter by letter
+        function typeMenuItem(item, index, text) {
+          if (index < text.length) {
+            item.innerHTML = text.substring(0, index + 1);
+            setTimeout(() => {
+              typeMenuItem(item, index + 1, text);
+            }, 50); // Delay between each letter
+          }
+        }
+
+        // Start the typing animation
+        typeLs('ls', 0);
       });
     </script>
     <section class="about-me-intro">
       <span class="about-me-title">Architected in Vietnam / Engineered in Vietnam / Deployed in U.S.A</span>
       <p class="about-me-bio">
-      I'm a full stack software engineer. <br><br> I have strong committment and care about
-      creating effective and creative products that can withstand the test of time.
+        I'm a full stack software engineer. <br><br> I have strong commitment and care about
+        creating effective and creative products that can withstand the test of time.
       </p>
       <hr>
       <span class="about-me-title">Personal Interest</span>
@@ -30,9 +83,9 @@
         <div class="terminal-prompt">
           <span class="cli-prompt-rhs">
             ~ 
-            <mark style="color:#DC9656;background:#282828">❯ 
-              <mark style="color:#A1B56C;background:#282828"><b>ls</b></span>
-          <span class="cli-prompt-lhs">0.02s ~</span>
+            <mark id="prompt-caret" style="color:#DC9656;background:#282828">❯ 
+              <mark id="typing-text" style="color:#A1B56C;background:#282828"><b></b></mark></span>
+          <span id="typing-time" class="cli-prompt-lhs" style="visibility:hidden">0.02s ~</span>
         </div>
         <ul class="terminal-menu">
           <li class="terminal-menu-item"><span>Automation</span></li>
@@ -53,13 +106,11 @@
         </ul>
       </section>
     </section>
+    <footer></footer>
+    <script>
+      $(document).ready(function() {
+        $("footer").load("/footer.html");
+      });
+    </script>
   </body>
-  <br><br>
-  <footer>
-  </footer>
-  <script>
-    $(document).ready(function() {
-      $("footer").load("/footer.html");
-    });
-  </script>
 </html>
