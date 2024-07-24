@@ -32,8 +32,8 @@
 .terminal {
   width: 85vw;
   width: 85dvw;
-  max-height: 50vh;
-  max-height: 50dvh;
+  max-height: 60vh;
+  max-height: 60dvh;
   margin-top: 2vh;
   margin-top: 2dvh;
   background-color: #181818;
