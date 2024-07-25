@@ -9,19 +9,6 @@
     <link rel="stylesheet" href="/style/footer.css">
     <title>About Me — khuen</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <style>
-      .terminal-menu .terminal-menu-item {
-        display: inline-block;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        white-space: nowrap;
-      }
-      .terminal-menu .terminal-menu-item.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
   </head>
   <body>
     <header></header>
@@ -35,14 +22,14 @@
             document.querySelector('#typing-text b').innerHTML += text.charAt(index);
             setTimeout(function() {
               typeLs(text, index + 1);
-            }, 300); // Delay between each letter
+            }, 100); // Delay between each letter
           } else {
             setTimeout(function() {
               document.getElementById('typing-time').style.visibility = 'visible';
               setTimeout(function() {
                 showMenuItems();
-              }, 500); // Delay before showing menu items
-            }, 500); // Delay before showing "0.02s"
+              }, 200); // Delay before showing menu items
+            }, 200); // Delay before showing "0.02s"
           }
         }
 
@@ -90,7 +77,6 @@
         <ul class="terminal-menu">
           <li class="terminal-menu-item"><span>Automation</span></li>
           <li class="terminal-menu-item">Cybersecurity</li>
-          <li class="terminal-menu-item">Data Structure and Algorithm</li>
           <li class="terminal-menu-item">Computer Vision</li>
           <li class="terminal-menu-item">Machine Learning</li>
           <li class="terminal-menu-item"><span>Embedded System</span></li>
