@@ -10,6 +10,20 @@
     <title>About Me — khuen</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
+  <style>
+    .terminal-menu .terminal-menu-item {
+      display: inline-block; /* Ensure inline-block to apply animations */
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      white-space: nowrap; /* Prevent wrapping of text */
+    }
+
+    .terminal-menu .terminal-menu-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
   <body>
     <header></header>
     <script>

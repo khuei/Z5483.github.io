@@ -83,6 +83,7 @@
 }
 
 .terminal-menu .terminal-menu-item {
+
   display: inline-block; /* Ensure inline-block to apply animations */
   opacity: 0;
   transform: translateY(10px);
