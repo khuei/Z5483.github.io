@@ -67,9 +67,9 @@
   <script>
     $(document).ready(function() {
       // Check if the animation has already been run
-      if (!localStorage.getItem('animationHasRun')) {
+      if (!sessionStorage.getItem('animationHasRun')) {
         // Set the flag in local storage
-        localStorage.setItem('animationHasRun', 'true');
+        sessionStorage.setItem('animationHasRun', 'true');
 
         // Add the class that triggers the animation
         document.getElementById('body').classList.add('animate');
