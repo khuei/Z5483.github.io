@@ -16,8 +16,8 @@
   display: flex;
   flex-direction: row;
   gap: 4%;
-  min-height: 25vh;
-  min-height: 25dvh;
+  min-height: 15vh;
+  min-height: 15dvh;
   background-color: #181818;
   border-bottom: 0.2em #585858;
   font-size: 1.5em;
