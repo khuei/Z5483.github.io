@@ -2,7 +2,8 @@
   font-weight: bold;
 }
 
-.profile {
+#profile {
+  visibility: hidden;
   color: #383838;
   height: 95vh;
   height: 95dvh;
