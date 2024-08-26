@@ -22,6 +22,9 @@
   border-bottom: 0.2em #585858;
   font-size: 1.5em;
   border-radius: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 0s 1s;
 }
 
 img.title-art {

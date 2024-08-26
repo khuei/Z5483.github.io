@@ -11,11 +11,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
-    <header>
-    </header>
+    <header></header>
     <script>
       $(document).ready(function() {
         $("header").load("/header.html");
+
+        // Animation to show each blog item one by one
+        $(".blog-listing-item").each(function(index) {
+          $(this).css({
+            "visibility": "visible",
+            "transition-delay": `${index * 0.1}s`
+          }).animate({opacity: 1}, 250);
+        });
       });
     </script>
     <section class="blog-listing">
@@ -64,8 +71,7 @@
       </div>
     </section>
   </body>
-  <footer>
-  </footer>
+  <footer></footer>
   <script>
     $(document).ready(function() {
       $("footer").load("/footer.html");
