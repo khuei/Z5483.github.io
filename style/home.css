@@ -122,6 +122,10 @@
 .blog-highlight {
   display: flex;
   flex-direction: column;
-  background-color: #E1B382;
-  padding: 5vh;
+  background-color: #383838;
+  padding-top: 9dvh;
+  padding-bottom: 9dvh;
+  padding-left: 5dvw;
+  padding-right: 5dvw;
+  gap: 2vh;
 }

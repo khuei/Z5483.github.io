@@ -16,6 +16,14 @@
     <script>
       $(document).ready(function() {
         $("header").load("/header.html");
+
+        // Animation to show each blog item one by one
+        $(".blog-listing-item").each(function(index) {
+          $(this).css({
+            "visibility": "visible",
+            "transition-delay": `${index * 0.1}s`
+          }).animate({opacity: 1}, 250);
+        });
       });
     </script>
     <section id="profile">
@@ -45,6 +53,51 @@
       <a href="#bottom" class="skip-viewport-arrow">
         <svg height="5vh" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/></svg>
       </a>
+    </section>
+    <section id="blog-highlight" class="blog-highlight">
+      <div class="blog-listing-item">
+        <br>
+        <a href="/blog/things-help-me-to-be-productive-during-college.html" class="blog-listing-description">
+          <span class="blog-tag">Programming</span>
+          <span class="blog-title">Things Help Me To Be Productive During College</span>
+          <p class="blog-synopsis">Explanation of all the tools that maximize my productivity during college</p>
+          <div class="blog-subscript">
+            <span class="blog-subscript-text">Reading Time: 15 min</span>
+            <span class="blog-subscript-text">August 20th, 2024</span>
+          </div>
+        </a>
+      </div>
+      <div class="blog-listing-item">
+        <br>
+        <a href="/blog/anatomy-of-a-vinyl-turntable.html" class="blog-listing-description">
+          <span class="blog-tag">MUSIC</span>
+          <span class="blog-title">Deconstructing the Vinyl Turntable: Unveiling Its Intricate Anatomy</span>
+          <p class="blog-synopsis">Embark on a captivating journey into the
+          heart of audio nostalgia as we delve deep into the mechanics and
+          components that compose a vinyl turntable. Unveil the intricate
+          anatomy behind the magic of spinning records that make the turntable
+          a timeless icon of musical craftsmanship</p>
+          <div class="blog-subscript">
+            <span class="blog-subscript-text">Reading Time: 13 min</span>
+            <span class="blog-subscript-text">August 31st, 2023</span>
+          </div>
+        </a>
+      </div>
+      <div class="blog-listing-item">
+        <br>
+        <a href="/blog/everything-about-making-coffee.html" class="blog-listing-description">
+          <span class="blog-tag">FOOD</span>
+          <span class="blog-title">The Complete Guide to the Art of Making Coffee</span>
+          <p class="blog-synopsis">Have you ever wondered how to transform
+          those aromatic coffee beans into a cup of morning magic? In this
+          comprehensive guide, I'll walk you through the art of crafting a
+          perfect cup of coffee from scratch.</p>
+          <div class="blog-subscript">
+            <span class="blog-subscript-text">Reading Time: 16 min</span>
+            <span class="blog-subscript-text">September 1st, 2023</span>
+          </div>
+        </a>
+      </div>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
