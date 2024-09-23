@@ -36,7 +36,7 @@ function Header({ onChangeTab }) {
                             id="header-item-blog"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleChange(1);
+                                handleChange(2);
                             }}
                         >
                             Blog
@@ -49,7 +49,7 @@ function Header({ onChangeTab }) {
                             id="header-item-about-me"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleChange(2);
+                                handleChange(1);
                             }}
                         >
                             About Me
