@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 
 function Header({ onChangeTab }) {
-    const [value, setValue] = useState(0);
-
     const handleChange = (newValue) => {
-        setValue(newValue);
         onChangeTab(newValue);
     };
 
@@ -27,19 +24,6 @@ function Header({ onChangeTab }) {
                             }}
                         >
                             Home
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/blog/"
-                            className="header-menu-item"
-                            id="header-item-blog"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                handleChange(2);
-                            }}
-                        >
-                            Blog
                         </a>
                     </li>
                     <li>

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import './Home.css';
 import IconLinks from './IconLinks.js';
-import BlogListing from './BlogListing.js';
 
 function Home() {
   useEffect(() => {
@@ -34,14 +33,6 @@ function Home() {
         <ul className="body-link-menu">
             <IconLinks />
         </ul>
-      </section>
-      <center>
-        <a href="#bottom" class="skip-viewport-arrow" id="arrow-to-blog-highlight">
-          <svg height="5vh" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144"/></svg>
-        </a>
-      </center>
-      <section id="blog-highlight" className="blog-highlight">
-        <BlogListing />
       </section>
     </div>
   );
