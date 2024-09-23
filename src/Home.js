@@ -4,6 +4,7 @@ import './Home.css';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import IconLinks from './IconLinks.js';
+import BlogListing from './BlogListing.js';
 
 function Home() {
   useEffect(() => {
@@ -43,7 +44,7 @@ function Home() {
         </a>
       </center>
       <section id="blog-highlight" className="blog-highlight">
-        {/* Blog items */}
+        <BlogListing />
       </section>
       <Footer />
     </div>

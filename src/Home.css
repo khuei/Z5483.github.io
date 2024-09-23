@@ -121,7 +121,7 @@
 
 .blog-highlight {
   display: flex;
-  height: 72dvh;
+  min-height: 20dvh;
   flex-direction: column;
   background-color: #383838;
   padding-top: 9dvh;
