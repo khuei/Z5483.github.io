@@ -1,0 +1,93 @@
+.about-me-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  min-height: 98vh;
+  min-height: 98dvh;
+  color: #181818;
+  padding-bottom: 2vh;
+}
+
+.about-me-title {
+  width: 50vw;
+  width: 50dvw;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+.about-me-bio {
+  width: 40vw;
+  width: 40dvw;
+  font-weight: lighter;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.terminal {
+  width: 85vw;
+  width: 85dvw;
+  min-height: 20vh;
+  min-height: 20dvh;
+  margin-top: 2vh;
+  margin-top: 2dvh;
+  background-color: #181818;
+}
+
+.terminal-prompt {
+  color: #D8D8D8;
+  font-size: 1.5em;
+  padding: 2%;
+  width: 80vw;
+  width: 80dvw;
+}
+
+.cli-prompt-rhs {
+  color: #7CAFC2;
+  float: left;
+  font-size: 1em;
+}
+
+.cli-prompt-lhs {
+  color: #7CAFC2;
+  float: right;
+  font-size: 1em;
+}
+
+.terminal-menu {
+  color: #D8D8D8;
+  font-weight: normal;
+  width: 85vw;
+  width: 85dvw;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 2vw;
+  padding-left: 2dvw;
+  padding-right: 2vw;
+  padding-right: 2dvw;
+}
+
+.terminal-menu-item {
+  font-size: 1.2em;
+  flex: 0 0 33%; /* Ensure three items per row */
+  box-sizing: border-box;
+  padding: 2vw;
+  padding: 2dvw;
+  margin-bottom: 2vh;
+}
+
+.terminal-menu .terminal-menu-item {
+
+  display: inline-block; /* Ensure inline-block to apply animations */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+
+.terminal-menu .terminal-menu-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
