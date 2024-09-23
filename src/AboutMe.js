@@ -75,7 +75,7 @@ const AboutMe = () => {
           </div>
           <ul className="terminal-menu">
             {['Cybersecurity', 'Computer Vision', 'Machine Learning', 'Embedded System', 
-              'UI/UX', 'Web Development', 'Human-Computer Interaction', 'Cinematography', 
+              'UI/UX', 'Web Development', 'HCI', 'Cinematography', 
               'Photography', 'Music', 'Cooking', 'Boxing', 'Blacksmithing', 'Weightlifting', 
               'Shoemaking'].map((item, idx) => (
               <li 

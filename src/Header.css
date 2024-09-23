@@ -27,6 +27,17 @@ header {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .header-logo {
+    font-size: 1.2em;
+  }
+
+  .header-menu {
+    font-size: 1.2em;
+    gap: 6dvw;
+  }
+}
+
 .header-menu-item {
   color: black;
   text-decoration: none;

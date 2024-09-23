@@ -19,18 +19,22 @@
 }
 
 .animate .profile-icon {
-    animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.profile-icon {
+  width: 300px;
 }
 
 .profile-name {
-  font-size: 3em;
+  font-size: 2rem;
   margin: 0;
   padding-bottom: 1%;
   animation-delay: 1s;
 }
 
 .profile-subscript {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0;
   padding: 0;
   animation-delay: 1.5s;
