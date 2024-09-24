@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { IoMdMail } from 'react-icons/io';
 import { GrInstagram } from "react-icons/gr";
 
-function Gallery() {
+function Personal() {
     useEffect(() => {
         document.title = 'Gallery — Khue Nguyen';
         document.querySelectorAll('.blog-listing-item').forEach((item, index) => {
@@ -49,4 +49,4 @@ function Gallery() {
     );
 }
 
-export default Gallery;
+export default Personal;

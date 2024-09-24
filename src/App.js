@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Home from './Home.js';
 import AboutMe from './AboutMe.js';
 import Header from './Header.js';
-import Gallery from './Gallery.js';
+import Personal from './Personal.js';
 
 function App() {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -82,7 +82,7 @@ function App() {
                     <div style={getTransitionStyles('entered')}>
                         {selectedTab === 0 && <Home />}
                         {selectedTab === 1 && <AboutMe />}
-                        {selectedTab === -1 && <Gallery />}
+                        {selectedTab === -1 && <Personal />}
                     </div>
                 </CSSTransition>
             </TransitionGroup>
