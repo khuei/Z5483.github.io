@@ -8,6 +8,8 @@ const AboutMe = () => {
   const hasTyped = useRef(false); // Flag to prevent multiple calls
 
   useEffect(() => {
+    document.title = "About Me — Khue Nguyen";
+
     if (hasTyped.current) return; // Exit if already typed
     hasTyped.current = true; // Set flag to true
 
@@ -50,7 +52,7 @@ const AboutMe = () => {
       <header></header>
       <section className="about-me-intro">
         <span className="about-me-title">
-          Architected in Vietnam / Engineered in Vietnam / Deployed in U.S.A
+          Architected in Vietnam / Engineered in U.S.A / Deployed in U.S.A
         </span>
         <p className="about-me-bio">
           I'm a full stack software engineer. <br /><br /> I have a strong commitment to
