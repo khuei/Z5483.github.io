@@ -57,6 +57,7 @@
   justify-content: center;
   align-content: center;
   padding-right: 4%;
+  margin-left: 3dvw;
 }
 
 .animate .body-link-menu li {
@@ -110,23 +111,4 @@
   max-width: 120vw;
   max-width: 120dvw;
   height: auto;
-}
-
-.skip-viewport-arrow {
-  position: absolute;
-  bottom: 0;
-  color: black;
-  text-decoration: none;
-}
-
-.blog-highlight {
-  display: flex;
-  min-height: 20dvh;
-  flex-direction: column;
-  background-color: #383838;
-  padding-top: 9dvh;
-  padding-bottom: 9dvh;
-  padding-left: 5dvw;
-  padding-right: 5dvw;
-  gap: 2vh;
 }
