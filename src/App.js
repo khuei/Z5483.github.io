@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Home from './Home.js';
 import AboutMe from './AboutMe.js';
@@ -39,6 +39,20 @@ function App() {
 
         return baseStyle;
     };
+
+    useEffect(() => {
+        const setDesktopViewport = () => {
+            const isMobile = window.innerWidth < 1024;
+            if (isMobile) {
+                document.body.style.minWidth = '1024px';
+            }
+        };
+
+        setDesktopViewport();
+        window.addEventListener('resize', setDesktopViewport);
+
+        return () => window.removeEventListener('resize', setDesktopViewport);
+    }, []);
 
     return (
         <div className="App">
