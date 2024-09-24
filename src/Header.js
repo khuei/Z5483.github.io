@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './Header.css';
 
@@ -38,22 +38,6 @@ function Header({ onChangeTab, currentTab }) {
                             }}
                         >
                             About Me
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="/gallery"
-                            className="header-menu-item"
-                            onClick={(e) => {
-                                e.preventDefault();
-
-                                if (currentTab >= 0)
-                                    handleChange(-1);
-                                else
-                                    handleChange(0);
-                            }}
-                        >
-                            { currentTab >= 0 ? "Professional" : "Personal"}
                         </a>
                     </li>
                 </ul>
