@@ -29,7 +29,7 @@ function Header({ onChangeTab, currentTab }) {
                     </li>
                     <li>
                         <a
-                            href="/about-me.html"
+                            href="/about-me"
                             className="header-menu-item"
                             id="header-item-about-me"
                             onClick={(e) => {
@@ -42,14 +42,18 @@ function Header({ onChangeTab, currentTab }) {
                     </li>
                     <li>
                         <a
-                            href="gallery"
+                            href="/gallery"
                             className="header-menu-item"
-                            onCLick={(e) => {
+                            onClick={(e) => {
                                 e.preventDefault();
-                                handleChange(-100);
+
+                                if (currentTab >= 0)
+                                    handleChange(-1);
+                                else
+                                    handleChange(0);
                             }}
                         >
-                            { currentTab >= 0 ? "Dark Mode" : "Light Mode"}
+                            { currentTab >= 0 ? "Professional" : "Personal"}
                         </a>
                     </li>
                 </ul>
