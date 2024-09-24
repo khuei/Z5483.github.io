@@ -12,7 +12,20 @@ code {
   font-weight: normal;
 }
 
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
+  overflow: -moz-scrollbars-none; /* For old Firefox versions */
+  overflow-y: scroll; /* Keep vertical scrolling enabled */
   margin: 0;
   padding: 0;
   background: #F8F8F8;
