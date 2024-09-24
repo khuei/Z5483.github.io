@@ -56,7 +56,7 @@ function App() {
 
     return (
         <div className="App">
-            <Header onChangeTab={handleTabChange} />
+            <Header onChangeTab={handleTabChange} currentTab={selectedTab} />
             <TransitionGroup>
                 <CSSTransition
                     key={selectedTab}

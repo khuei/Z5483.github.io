@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+
 import './Header.css';
 
-function Header({ onChangeTab }) {
+function Header({ onChangeTab, currentTab }) {
     const handleChange = (newValue) => {
         onChangeTab(newValue);
     };
@@ -37,6 +38,18 @@ function Header({ onChangeTab }) {
                             }}
                         >
                             About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="gallery"
+                            className="header-menu-item"
+                            onCLick={(e) => {
+                                e.preventDefault();
+                                handleChange(-100);
+                            }}
+                        >
+                            { currentTab >= 0 ? "Dark Mode" : "Light Mode"}
                         </a>
                     </li>
                 </ul>

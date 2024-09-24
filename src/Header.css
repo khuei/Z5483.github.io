@@ -10,8 +10,8 @@ header {
 .header-logo {
   color: black;
   text-decoration: none;
-  padding-left: 5vw;
-  padding-left: 5dvw;
+  padding-left: 2vw;
+  padding-left: 2dvw;
   font-size: 1.5em;
 }
 
@@ -27,17 +27,6 @@ header {
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .header-logo {
-    font-size: 1.2em;
-  }
-
-  .header-menu {
-    font-size: 1.2em;
-    gap: 6dvw;
-  }
-}
-
 .header-menu-item {
   color: black;
   text-decoration: none;
@@ -46,31 +35,4 @@ header {
 .header-menu-item:hover {
   color: brown;
   text-decoration: underline;
-}
-
-.archive-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: Moccasin;
-  z-index: 1;
-  margin: 0;
-}
-
-.archive-dropdown-content a {
-  display: block;
-  color: Black;
-  text-decoration: none;
-  padding: 5px;
-  margin: 0;
-}
-
-.archive-dropdown-content a:hover {
-  display: block;
-  color: Brown;
-  background-color: BurlyWood;
-}
-
-#header-item-archive:hover + .archive-dropdown-content,
-.archive-dropdown-content:hover {
-  display: block;
 }
