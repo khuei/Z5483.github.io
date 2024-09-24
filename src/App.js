@@ -53,20 +53,6 @@ function App() {
         return baseStyle;
     };
 
-    useEffect(() => {
-        const setDesktopViewport = () => {
-            const isMobile = window.innerWidth < 1024;
-            if (isMobile) {
-                document.body.style.minWidth = '1024px';
-            }
-        };
-
-        setDesktopViewport();
-        window.addEventListener('resize', setDesktopViewport);
-
-        return () => window.removeEventListener('resize', setDesktopViewport);
-    }, []);
-
     return (
         <div className="App">
             <Header onChangeTab={handleTabChange} currentTab={selectedTab} />
