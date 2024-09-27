@@ -79,6 +79,10 @@
     animation-delay: 3s;
 }
 
+.animate .body-link-menu li:nth-child(4) {
+    animation-delay: 3.5s;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
