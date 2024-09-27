@@ -3,10 +3,20 @@ import { IoMdMail } from 'react-icons/io';
 import { FaGithub } from 'react-icons/fa';
 import { FaInstagram } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
+import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import { animateScroll as scroll } from 'react-scroll';
 
 import './Home.css';
+import BlogListing from './BlogListing.js';
 
 function Home() {
+    const scrollToBottom = () => {
+        scroll.scrollToBottom({
+            duration: 500,
+            smooth: true,
+        });
+    };
+
     useEffect(() => {
         document.title = 'Home — Khue Nguyen';
         document.querySelectorAll('.blog-listing-item').forEach((item, index) => {
@@ -15,16 +25,12 @@ function Home() {
             item.style.opacity = 1;
         });
 
-        const arrowToBlogHighlight = document.getElementById('arrow-to-blog-highlight');
-        arrowToBlogHighlight?.addEventListener('click', () => {
-            document.querySelector('#bottom').scrollIntoView({ behavior: 'smooth' });
-        });
-
         const hasRun = sessionStorage.getItem('animationHasRun');
         if (!hasRun) {
             sessionStorage.setItem('animationHasRun', 'true');
             document.getElementById('body').classList.add('animate');
         }
+
         document.getElementById('profile').style.visibility = 'visible';
     }, []);
 
@@ -60,6 +66,13 @@ function Home() {
                   </a>
               </li>
           </ul>
+          <div id='arrow-to-blog-highlight' onClick={scrollToBottom}>
+            <span>Scroll Down</span>
+            <MdOutlineKeyboardDoubleArrowDown size='2.5rem' />
+          </div>
+        </section>
+        <section id="blog-highlight" class="blog-highlight">
+            <BlogListing />
         </section>
       </div>
     );

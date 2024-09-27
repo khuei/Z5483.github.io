@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .animate .profile-icon,
@@ -115,4 +116,27 @@
   max-width: 120vw;
   max-width: 120dvw;
   height: auto;
+}
+
+#arrow-to-blog-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 2dvh;
+  color: grey;
+  text-decoration: none;
+}
+
+.blog-highlight {
+  display: flex;
+  min-height: 50dvh;
+  flex-direction: column;
+  background-color: #383838;
+  padding-top: 2dvh;
+  padding-bottom: 2dvh;
+  padding-left: 4dvw;
+  padding-right: 4dvw;
+  gap: 2vh;
 }
