@@ -42,7 +42,7 @@ const BlogListing = () => {
     ];
 
     return (
-        <section id="blog-highlight" className="blog-highlight">
+        <>
         {blogs.map((blog, index) => (
             <div className="blog-listing-item" key={index}>
                 <br />
@@ -57,7 +57,7 @@ const BlogListing = () => {
                 </a>
             </div>
         ))}
-        </section>
+        </>
     );
 };
 
