@@ -55,8 +55,8 @@ const AboutMe = () => {
           Architected in Vietnam / Engineered in U.S.A / Deployed in U.S.A
         </span>
         <p className="about-me-bio">
-          I'm a full stack software engineer. <br /><br /> I have a strong commitment to
-          making effective and creative products that can withstand the test of time.
+          I have a strong commitment to making effective and creative products
+          that can withstand the test of time.
         </p>
         <hr />
         <span className="about-me-title">Personal Interest</span>
@@ -76,13 +76,12 @@ const AboutMe = () => {
             </span>
           </div>
           <ul className="terminal-menu">
-            {['Cybersecurity', 'Computer Vision', 'Machine Learning', 'Embedded System', 
-              'UI/UX', 'Web Development', 'HCI', 'Cinematography', 
-              'Photography', 'Music', 'Cooking', 'Boxing', 'Blacksmithing', 'Weightlifting', 
-              'Shoemaking'].map((item, idx) => (
-              <li 
-                key={idx} 
-                className="terminal-menu-item" 
+            {['Programming', 'Web Design', 'Woodworking', 'Cinematography',
+              'Photography', 'Music', 'Cooking', 'Boxing', 'Blacksmithing',
+              'Weightlifting', 'Shoemaking', 'Lego'].map((item, idx) => (
+              <li
+                key={idx}
+                className="terminal-menu-item"
                 ref={el => menuItemsRef.current[idx] = el}
               >
                 {item}
