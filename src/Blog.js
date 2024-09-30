@@ -1,10 +1,10 @@
 import BlogListing from './BlogListing.js';
 import './Blog.css';
 
-const Blog = () => {
+const Blog = ({ onChangeTab }) => {
     return (
         <section id='blog-listing'>
-            <BlogListing />
+            <BlogListing onChangeTab={onChangeTab} />
         </section>
     );
 };

@@ -9,7 +9,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import './Home.css';
 import BlogListing from './BlogListing.js';
 
-function Home() {
+function Home({ onChangeTab }) {
     const scrollToBottom = () => {
         scroll.scrollToBottom({
             duration: 500,
@@ -72,7 +72,7 @@ function Home() {
           </div>
         </section>
         <section id="blog-highlight" class="blog-highlight">
-            <BlogListing />
+            <BlogListing onChangeTab={onChangeTab} />
         </section>
       </div>
     );

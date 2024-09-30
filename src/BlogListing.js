@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 
 import './BlogListing.css';
 
-const BlogListing = () => {
+const BlogListing = ({ onChangeTab }) => {
+    const handleChange = (newValue) => {
+        onChangeTab(newValue);
+    };
+
     useEffect(() => {
         document.querySelectorAll('.blog-listing-item').forEach((item, index) => {
             item.style.visibility = 'visible';
@@ -46,7 +50,8 @@ const BlogListing = () => {
         {blogs.map((blog, index) => (
             <div className="blog-listing-item" key={index}>
                 <br />
-                <a href={blog.link} className="blog-listing-description">
+                <a href={blog.link} className="blog-listing-description"
+                 onClick={(e) => { e.preventDefault(); handleChange(index + 100); }}>
                     <span className="blog-tag">{blog.tag}</span>
                     <span className="blog-title">{blog.title}</span>
                     <p className="blog-synopsis">{blog.synopsis}</p>

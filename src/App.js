@@ -6,6 +6,10 @@ import Blog from './Blog.js';
 import AboutMe from './AboutMe.js';
 import Header from './Header.js';
 
+import CollegeProductivity from './blog/CollegeProductivity.js';
+import VinylAnatomy from './blog/VinylAnatomy.js';
+import MakingCoffee from './blog/MakingCoffee.js';
+
 function App() {
     const [selectedTab, setSelectedTab] = useState(0);
     const [direction, setDirection] = useState('right'); // Track direction
@@ -66,9 +70,12 @@ function App() {
                     onExit={(node) => Object.assign(node.style, getTransitionStyles('exiting'))}
                 >
                     <div style={getTransitionStyles('entered')}>
-                        {selectedTab === 0 && <Home />}
-                        {selectedTab === 1 && <Blog />}
+                        {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
+                        {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
                         {selectedTab === 2 && <AboutMe />}
+                        {selectedTab == 100 && <CollegeProductivity />}
+                        {selectedTab == 101 && <VinylAnatomy />}
+                        {selectedTab == 102 && <MakingCoffee />}
                     </div>
                 </CSSTransition>
             </TransitionGroup>
