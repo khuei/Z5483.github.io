@@ -54,7 +54,7 @@ function Home({ onChangeTab }) {
                   </a>
               </li>
               <li>
-                  <a href="https://instagram.com/khuei" className="image-anchor">
+                  <a href="https://instagram.com/its.khue" className="image-anchor">
                       <center><FaInstagram size='4em' /></center>
                       <span className="image-subscript">Instagram</span>
                   </a>
