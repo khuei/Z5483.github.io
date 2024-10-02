@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import './BlogPost.css';
 
 const VinylAnatomy = () => {
+    useEffect(() => {
+        document.title = 'Deconstructing The Vinyl Turntable — Khue Nguyen';
+    });
+
     return (
         <div>
             <section className="blog-page-title">
-                <h2>Deconstructing the Vinyl Turntable: Unveiling Its Intricate Anatomy</h2>
+                <h2>Deconstructing The Vinyl Turntable: Unveiling Its Intricate Anatomy</h2>
                 <span>August 31st, 2023 — Khue Nguyen</span>
                 <span>Reading Time: 13 min</span>
                 <hr />

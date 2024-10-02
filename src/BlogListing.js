@@ -27,7 +27,7 @@ const BlogListing = ({ onChangeTab }) => {
         },
         {
             tag: 'MUSIC',
-            title: 'Deconstructing the Vinyl Turntable: Unveiling Its Intricate Anatomy',
+            title: 'Deconstructing The Vinyl Turntable: Unveiling Its Intricate Anatomy',
             synopsis:
             'Embark on a captivating journey into the heart of audio nostalgia as we delve deep into the mechanics and components that compose a vinyl turntable...',
             readingTime: '13 min',
@@ -36,7 +36,7 @@ const BlogListing = ({ onChangeTab }) => {
         },
         {
             tag: 'FOOD',
-            title: 'The Complete Guide to the Art of Making Coffee',
+            title: 'The Complete Guide To The Art Of Making Coffee',
             synopsis:
             'Have you ever wondered how to transform those aromatic coffee beans into a cup of morning magic? In this comprehensive guide, I’ll walk you through...',
             readingTime: '16 min',

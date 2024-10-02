@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import './BlogPost.css';
 
 const CollegeProductivity = () => {
+    useEffect(() => {
+        document.title = 'Things Help Me To Be Productive During College — Khue Nguyen';
+    });
+
     return (
         <div>
             <section className="blog-page-title">

@@ -2,10 +2,14 @@ import React, { useEffect } from 'react';
 import './BlogPost.css';
 
 const MakingCoffee = () => {
+  useEffect(() => {
+      document.title = 'The Complete Guide To The Art Of Making Coffee — Khue Nguyen';
+  })
+
   return (
     <div>
       <section className="blog-page-title">
-        <h2>The Complete Guide to the Art of Making Coffee</h2>
+        <h2>The Complete Guide To The Art Of Making Coffee</h2>
         <span>September 1st, 2023 — Khue Nguyen</span>
         <span>Reading Time: 16 min</span>
         <hr />

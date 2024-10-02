@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Box, ImageList, ImageListItem, ImageListItemBar, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -16,6 +17,10 @@ export default function MasonryGallery() {
         if (isSm) return 1;
         return 1;
     };
+
+    useEffect(() => {
+        document.title = 'Hobby — Khue Nguyen';
+    });
 
     return (
         <center>
