@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, ImageList, ImageListItem, ImageListItemBar, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-export default function MasonryGallery() {
+export default function ShoemakingGallery() {
     const theme = useTheme();
 
     const isXl = useMediaQuery(theme.breakpoints.up('xl')); // screens 1920px and up
@@ -19,7 +19,7 @@ export default function MasonryGallery() {
     };
 
     useEffect(() => {
-        document.title = 'Hobby — Khue Nguyen';
+        document.title = 'Shoemaking — Khue Nguyen';
     });
 
     return (

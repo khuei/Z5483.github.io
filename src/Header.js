@@ -50,7 +50,7 @@ function Header({ onChangeTab, currentTab }) {
                                 handleChange(2);
                             }}
                         >
-                            Gallery
+                            Hobby
                         </a>
                     </li>
                     <li>
