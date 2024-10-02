@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from './Home.js';
 import Blog from './Blog.js';
-import ShoemakingGallery from './gallery/ShoemakingGallery.js';
+import ShoemakingGallery from './gallery/shoemaking/ShoemakingGallery.js';
 import AboutMe from './AboutMe.js';
 import Header from './Header.js';
 import Hobby from './Hobby.js';
@@ -12,53 +12,87 @@ import CollegeProductivity from './blog/CollegeProductivity.js';
 import VinylAnatomy from './blog/VinylAnatomy.js';
 import MakingCoffee from './blog/MakingCoffee.js';
 
+import NycToParis from './gallery/shoemaking/NycToParis.js';
+
 function App() {
     const [selectedTab, setSelectedTab] = useState(0);
-    const [direction, setDirection] = useState('right'); // Track direction
+    const [tabHistory, setTabHistory] = useState([0]); // Initialize history with the first tab
+    const [historyIndex, setHistoryIndex] = useState(0);
+    const [direction, setDirection] = useState('right');
 
     const handleTabChange = (newValue) => {
-        // Detect if we're switching between negative and positive values
-        if (newValue < 0 && selectedTab >= 0) {
-            setDirection('down'); // Slide down when going from positive to negative
-        } else if (newValue >= 0 && selectedTab < 0) {
-            setDirection('up'); // Slide up when going from negative to positive
-        } else if (newValue > selectedTab) {
-            setDirection('right'); // Horizontal right transition
+        // Update the direction based on the new tab
+        if (newValue < selectedTab) {
+            setDirection('left'); // Going left in history
         } else {
-            setDirection('left'); // Horizontal left transition
+            setDirection('right'); // Going right in history
         }
 
+        // Update the tab history
+        const newHistory = [...tabHistory.slice(0, historyIndex + 1), newValue];
+        setTabHistory(newHistory);
+        setHistoryIndex(historyIndex + 1); // Move history index forward
         setSelectedTab(newValue);
     };
 
-    const getTransitionStyles = (state) => {
+    const goBack = () => {
+        if (historyIndex > 0) {
+            setHistoryIndex(historyIndex - 1);
+            setSelectedTab(tabHistory[historyIndex - 1]);
+        }
+    };
+
+    const goForward = () => {
+        if (historyIndex < tabHistory.length - 1) {
+            setHistoryIndex(historyIndex + 1);
+            setSelectedTab(tabHistory[historyIndex + 1]);
+        }
+    };
+
+    const getTransitionStyles = (state, direction) => {
         const baseStyle = {
             transition: 'transform 0.3s ease, opacity 0.3s ease',
             opacity: 0,
         };
 
-        // Horizontal transitions (right or left)
         if (state === 'entering') {
             if (direction === 'right') {
                 return { ...baseStyle, transform: 'translateX(100%)' };
             } else if (direction === 'left') {
                 return { ...baseStyle, transform: 'translateX(-100%)' };
-            } else if (direction === 'up') {
-                // Vertical transition - slide up
-                return { ...baseStyle, transform: 'translateY(100%)' };
-            } else if (direction === 'down') {
-                // Vertical transition - slide down
-                return { ...baseStyle, transform: 'translateY(-100%)' };
             }
         }
 
         if (state === 'entered') {
-            // Return to neutral state without applying new transforms (this avoids double animation)
             return { transform: 'translateX(0)', opacity: 1 };
+        }
+
+        if (state === 'exiting') {
+            if (direction === 'right') {
+                return { ...baseStyle, transform: 'translateX(-100%)' };
+            } else if (direction === 'left') {
+                return { ...baseStyle, transform: 'translateX(100%)' };
+            }
         }
 
         return baseStyle;
     };
+
+    useEffect(() => {
+        const handleMouseBackButton = (event) => {
+            if (event.button === 3) { // Mouse back button
+                goBack();
+            } else if (event.button === 4) { // Mouse forward button
+                goForward();
+            }
+        };
+
+        window.addEventListener('mouseup', handleMouseBackButton);
+
+        return () => {
+            window.removeEventListener('mouseup', handleMouseBackButton);
+        };
+    }, [tabHistory, historyIndex]); // Dependencies updated to include history
 
     return (
         <div className="App">
@@ -66,20 +100,22 @@ function App() {
             <TransitionGroup>
                 <CSSTransition
                     key={selectedTab}
-                    timeout={200}
-                    onEnter={(node) => Object.assign(node.style, getTransitionStyles('entering'))}
-                    onEntered={(node) => Object.assign(node.style, getTransitionStyles('entered'))}
-                    onExit={(node) => Object.assign(node.style, getTransitionStyles('exiting'))}
+                    timeout={300}
+                    classNames="fade"
+                    onEnter={(node) => Object.assign(node.style, getTransitionStyles('entering', direction))}
+                    onEntered={(node) => Object.assign(node.style, getTransitionStyles('entered', direction))}
+                    onExit={(node) => Object.assign(node.style, getTransitionStyles('exiting', direction))}
                 >
-                    <div style={getTransitionStyles('entered')}>
+                    <div style={getTransitionStyles('entered', direction)}>
                         {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
                         {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
                         {selectedTab === 2 && <Hobby onChangeTab={handleTabChange} />}
                         {selectedTab === 3 && <AboutMe />}
-                        {selectedTab == 100 && <CollegeProductivity />}
-                        {selectedTab == 101 && <VinylAnatomy />}
-                        {selectedTab == 102 && <MakingCoffee />}
-                        {selectedTab == 200 && <ShoemakingGallery />}
+                        {selectedTab === 100 && <CollegeProductivity />}
+                        {selectedTab === 101 && <VinylAnatomy />}
+                        {selectedTab === 102 && <MakingCoffee />}
+                        {selectedTab === 200 && <ShoemakingGallery onChangeTab={handleTabChange} />}
+                        {selectedTab === 1000 && <NycToParis />}
                     </div>
                 </CSSTransition>
             </TransitionGroup>
