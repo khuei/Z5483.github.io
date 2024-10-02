@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import './AboutMe.css';
+import React, { useEffect, useRef } from "react";
+import "./AboutMe.css";
 
 const AboutMe = () => {
   const typingTextRef = useRef(null);
@@ -15,14 +15,14 @@ const AboutMe = () => {
 
     const typeLs = (text, index) => {
       if (index === 0) {
-        typingTextRef.current.innerHTML = ''; // Clear only once at the start
+        typingTextRef.current.innerHTML = ""; // Clear only once at the start
       }
       if (index < text.length) {
         typingTextRef.current.innerHTML += text.charAt(index);
         setTimeout(() => typeLs(text, index + 1), 100);
       } else {
         setTimeout(() => {
-          typingTimeRef.current.style.visibility = 'visible';
+          typingTimeRef.current.style.visibility = "visible";
           setTimeout(showMenuItems, 200);
         }, 200);
       }
@@ -31,7 +31,7 @@ const AboutMe = () => {
     const showMenuItems = () => {
       menuItemsRef.current.forEach((item, idx) => {
         setTimeout(() => {
-          item.classList.add('show');
+          item.classList.add("show");
           typeMenuItem(item, 0, item.textContent);
         }, idx * 100);
       });
@@ -44,7 +44,7 @@ const AboutMe = () => {
       }
     };
 
-    typeLs(' ls', 0);
+    typeLs(" ls", 0);
   }, []);
 
   return (
@@ -63,26 +63,47 @@ const AboutMe = () => {
         <section className="terminal">
           <div className="terminal-prompt">
             <span className="cli-prompt-rhs">
-              ~ 
-              <mark id="prompt-caret" style={{ color: '#DC9656', background: '#181818' }}>
-                ❯ 
-                <mark id="typing-text" style={{ color: '#A1B56C', background: '#181818' }}>
+              ~
+              <mark
+                id="prompt-caret"
+                style={{ color: "#DC9656", background: "#181818" }}
+              >
+                ❯
+                <mark
+                  id="typing-text"
+                  style={{ color: "#A1B56C", background: "#181818" }}
+                >
                   <b ref={typingTextRef}></b>
                 </mark>
               </mark>
             </span>
-            <span ref={typingTimeRef} className="cli-prompt-lhs" style={{ visibility: 'hidden' }}>
+            <span
+              ref={typingTimeRef}
+              className="cli-prompt-lhs"
+              style={{ visibility: "hidden" }}
+            >
               0.02s ~
             </span>
           </div>
           <ul className="terminal-menu">
-            {['Programming', 'Web Design', 'Woodworking', 'Cinematography',
-              'Photography', 'Music', 'Cooking', 'Boxing', 'Blacksmithing',
-              'Weightlifting', 'Shoemaking', 'Lego'].map((item, idx) => (
+            {[
+              "Programming",
+              "Web Design",
+              "Woodworking",
+              "Cinematography",
+              "Photography",
+              "Music",
+              "Cooking",
+              "Boxing",
+              "Blacksmithing",
+              "Weightlifting",
+              "Shoemaking",
+              "Lego",
+            ].map((item, idx) => (
               <li
                 key={idx}
                 className="terminal-menu-item"
-                ref={el => menuItemsRef.current[idx] = el}
+                ref={(el) => (menuItemsRef.current[idx] = el)}
               >
                 {item}
               </li>
