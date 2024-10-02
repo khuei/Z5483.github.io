@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from './Home.js';
 import Blog from './Blog.js';
+import Gallery from './gallery/Gallery.js';
 import AboutMe from './AboutMe.js';
 import Header from './Header.js';
 
@@ -72,7 +73,8 @@ function App() {
                     <div style={getTransitionStyles('entered')}>
                         {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
                         {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
-                        {selectedTab === 2 && <AboutMe />}
+                        {selectedTab === 2 && <Gallery />}
+                        {selectedTab === 3 && <AboutMe />}
                         {selectedTab == 100 && <CollegeProductivity />}
                         {selectedTab == 101 && <VinylAnatomy />}
                         {selectedTab == 102 && <MakingCoffee />}

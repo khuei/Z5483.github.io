@@ -42,12 +42,25 @@ function Header({ onChangeTab, currentTab }) {
                     </li>
                     <li>
                         <a
+                            href="/gallery"
+                            className="header-menu-item"
+                            id="header-item-blog"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleChange(2);
+                            }}
+                        >
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a
                             href="/about-me"
                             className="header-menu-item"
                             id="header-item-about-me"
                             onClick={(e) => {
                                 e.preventDefault();
-                                handleChange(2);
+                                handleChange(3);
                             }}
                         >
                             About Me
