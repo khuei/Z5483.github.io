@@ -70,7 +70,7 @@ const itemData = [
         title: 'SHATTERED BACKBOARD',
     },
     {
-        img: 'https://i.pinimg.com/originals/79/4e/ac/794eac5bd8ebade5665c51ff10b05ac3.jpg',
+        img: 'https://i.pinimg.com/originals/9e/85/6e/9e856e4fd376703b48b370024975c03a.jpg',
         title: 'ESPRESSO',
     },
     {
@@ -86,7 +86,7 @@ const itemData = [
         title: 'PROTOTYPE',
     },
     {
-        img: 'https://i.pinimg.com/originals/3f/c6/c2/3fc6c2689717616dccf6308a7a154ab9.jpg',
+        img: 'https://i.pinimg.com/originals/79/48/00/794800b07ca77bae0d3996eb54db8f18.jpg',
         title: 'DECONSTRUCTED',
     },
     {
