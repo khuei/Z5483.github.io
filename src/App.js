@@ -3,16 +3,12 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Home from './Home.js';
 import Blog from './Blog.js';
-import ShoemakingGallery from './gallery/shoemaking/ShoemakingGallery.js';
 import AboutMe from './AboutMe.js';
 import Header from './Header.js';
-import Hobby from './Hobby.js';
 
 import CollegeProductivity from './blog/CollegeProductivity.js';
 import VinylAnatomy from './blog/VinylAnatomy.js';
 import MakingCoffee from './blog/MakingCoffee.js';
-
-import NycToParis from './gallery/shoemaking/NycToParis.js';
 
 function App() {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -109,13 +105,10 @@ function App() {
                     <div style={getTransitionStyles('entered', direction)}>
                         {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
                         {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
-                        {selectedTab === 2 && <Hobby onChangeTab={handleTabChange} />}
-                        {selectedTab === 3 && <AboutMe />}
+                        {selectedTab === 2 && <AboutMe />}
                         {selectedTab === 100 && <CollegeProductivity />}
                         {selectedTab === 101 && <VinylAnatomy />}
                         {selectedTab === 102 && <MakingCoffee />}
-                        {selectedTab === 200 && <ShoemakingGallery onChangeTab={handleTabChange} />}
-                        {selectedTab === 1000 && <NycToParis />}
                     </div>
                 </CSSTransition>
             </TransitionGroup>
