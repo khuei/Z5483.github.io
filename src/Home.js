@@ -82,13 +82,6 @@ function Home({ onChangeTab }) {
             </a>
           </li>
         </ul>
-        <div id="arrow-to-blog-highlight" onClick={scrollToBottom}>
-          <span>Scroll Down</span>
-          <MdOutlineKeyboardDoubleArrowDown size="2.5rem" />
-        </div>
-      </section>
-      <section id="blog-highlight" class="blog-highlight">
-        <BlogListing onChangeTab={onChangeTab} />
       </section>
     </div>
   );
