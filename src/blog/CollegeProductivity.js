@@ -62,59 +62,49 @@ const CollegeProductivity = () => {
         </div>
         <div id="linux" className="blog-page-section">
           <h3>GNU/Linux</h3>
-          <p>
-            Linux opened up a whole world of possibility in terms of
-            customization and tooling. During college, I had to use various
-            types of tools and software for software development, and it is so
-            much easier to install and integrate them in a Linux environment.
-          </p>
+          <ul>
+            <li>Customizable environment for productivity.</li>
+            <li>Easier software development tool installation.</li>
+            <li>Perfect integration of various tools and software.</li>
+          </ul>
         </div>
         <div id="tiling-window-manager" className="blog-page-section">
           <h3>Tiling Window Manager</h3>
-          <p>
-            Tiling Window Manager removed the need to use a mouse every time I
-            need to create or move windows. It also allows me to quickly switch
-            workspaces. Overall, I enjoy the ability to just keep my hands on
-            the keyboard while simultaneously quickly opening/moving/switching
-            windows as needed.
-          </p>
+          <ul>
+            <li>No need for a mouse to create or move windows.</li>
+            <li>Quick workspace switching and window management.</li>
+            <li>Efficient keyboard-only workflow.</li>
+          </ul>
         </div>
         <div id="vim" className="blog-page-section">
           <h3>Vim/Neovim</h3>
-          <p>
-            At the beginning of college, I mainly used Vim, but I later switched
-            to Neovim for the Treesitter and Language Server Protocol
-            integration. The quick navigation and refactoring ability of Neovim
-            are so useful when programming. Again, I do not need to move my
-            hands away from the keyboard to use this tool. Additionally, I find
-            the ability to apply regular expressions to texts extremely useful.
-          </p>
+          <ul>
+            <li>Flexible customizability with plugins.</li>
+            <li>Neovim provides Treesitter and LSP integration.</li>
+            <li>Fast navigation, refactoring, and regular expressions.</li>
+            <li>Keyboard-centric workflow.</li>
+          </ul>
         </div>
         <div id="aliases" className="blog-page-section">
           <h3>Aliases</h3>
-          <p>
-            Having aliases for terminal and git commands boost my ability to
-            instantaneously perform complex actions. Especially with git
-            commands, I constantly use aliases for rebasing, branching, and
-            displaying trees with useful visual/information.
-          </p>
+          <ul>
+            <li>
+              Boost productivity with custom aliases for terminal and git.
+            </li>
+            <li>
+              Common git aliases for rebasing, branching, and visualizing trees.
+            </li>
+          </ul>
         </div>
         <div id="terminal" className="blog-page-section">
           <h3>Terminal Styling</h3>
-          <p>
-            I modified my command line prompt to show the status of the git
-            repository and the current branch name. The different statuses are:
-            modified, untracked, and committed. In addition, I also made my
-            prompt asynchronous to avoid hold-up while working with large git
-            repositories.
-          </p>
-          <p>
-            I also added the ability to switch between multiple terminal color
-            schemes with a single command. I find it cool as I often get tired
-            of one color scheme if I use it too much. It is also helpful for
-            quickly switching between dark and light modes depending on the
-            lighting of where I am working.
-          </p>
+          <ul>
+            <li>Customized prompt shows git status and branch name.</li>
+            <li>Statuses: modified, untracked, committed.</li>
+            <li>Asynchronous prompt for handling large git repos.</li>
+            <li>Quick switching between multiple terminal color schemes.</li>
+            <li>Light and dark mode toggle based on lighting conditions.</li>
+          </ul>
         </div>
         <h4>The End</h4>
       </section>
