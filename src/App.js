@@ -6,28 +6,27 @@ import Blog from "./Blog.js";
 import AboutMe from "./AboutMe.js";
 import Header from "./Header.js";
 
+import FavoriteFont from "./blog/FavoriteFont.js";
 import CollegeProductivity from "./blog/CollegeProductivity.js";
 import VinylAnatomy from "./blog/VinylAnatomy.js";
 import MakingCoffee from "./blog/MakingCoffee.js";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState(0);
-  const [tabHistory, setTabHistory] = useState([0]); // Initialize history with the first tab
+  const [tabHistory, setTabHistory] = useState([0]);
   const [historyIndex, setHistoryIndex] = useState(0);
   const [direction, setDirection] = useState("right");
 
   const handleTabChange = (newValue) => {
-    // Update the direction based on the new tab
     if (newValue < selectedTab) {
-      setDirection("left"); // Going left in history
+      setDirection("left");
     } else {
-      setDirection("right"); // Going right in history
+      setDirection("right");
     }
 
-    // Update the tab history
     const newHistory = [...tabHistory.slice(0, historyIndex + 1), newValue];
     setTabHistory(newHistory);
-    setHistoryIndex(historyIndex + 1); // Move history index forward
+    setHistoryIndex(historyIndex + 1);
     setSelectedTab(newValue);
   };
 
@@ -76,11 +75,11 @@ function App() {
 
   useEffect(() => {
     const handleMouseBackButton = (event) => {
+      event.preventDefault();
+
       if (event.button === 3) {
-        // Mouse back button
         goBack();
       } else if (event.button === 4) {
-        // Mouse forward button
         goForward();
       }
     };
@@ -90,7 +89,7 @@ function App() {
     return () => {
       window.removeEventListener("mouseup", handleMouseBackButton);
     };
-  }, [tabHistory, historyIndex]); // Dependencies updated to include history
+  }, [tabHistory, historyIndex]);
 
   return (
     <div className="App">
@@ -117,9 +116,10 @@ function App() {
             {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
             {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
             {selectedTab === 2 && <AboutMe />}
-            {selectedTab === 100 && <CollegeProductivity />}
-            {selectedTab === 101 && <VinylAnatomy />}
-            {selectedTab === 102 && <MakingCoffee />}
+            {selectedTab === 100 && <FavoriteFont />}
+            {selectedTab === 101 && <CollegeProductivity />}
+            {selectedTab === 102 && <VinylAnatomy />}
+            {selectedTab === 103 && <MakingCoffee />}
           </div>
         </CSSTransition>
       </TransitionGroup>

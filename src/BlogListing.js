@@ -18,13 +18,20 @@ const BlogListing = ({ onChangeTab }) => {
 
   const blogs = [
     {
+      tag: "DESIGN",
+      title: "My Favorite Monospace Fonts",
+      synopsis:
+        "Having spent a significant amount of time in the command line, I’ve come to appreciate how crucial font choice is for productivity and comfort.",
+      readingTime: "5 min",
+      date: "October 8th, 2024",
+    },
+    {
       tag: "Programming",
       title: "Things Help Me To Be Productive During College",
       synopsis:
         "Explanation of all the tools that maximize my productivity during college",
       readingTime: "15 min",
       date: "August 20th, 2024",
-      link: "/blog/things-help-me-to-be-productive-during-college.html",
     },
     {
       tag: "MUSIC",
@@ -34,7 +41,6 @@ const BlogListing = ({ onChangeTab }) => {
         "Embark on a captivating journey into the heart of audio nostalgia as we delve deep into the mechanics and components that compose a vinyl turntable...",
       readingTime: "13 min",
       date: "August 31st, 2023",
-      link: "/blog/anatomy-of-a-vinyl-turntable.html",
     },
     {
       tag: "FOOD",
@@ -43,7 +49,6 @@ const BlogListing = ({ onChangeTab }) => {
         "Have you ever wondered how to transform those aromatic coffee beans into a cup of morning magic? In this comprehensive guide, I’ll walk you through...",
       readingTime: "16 min",
       date: "September 1st, 2023",
-      link: "/blog/everything-about-making-coffee.html",
     },
   ];
 
