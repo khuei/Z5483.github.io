@@ -15,9 +15,10 @@ function App() {
   const [selectedTab, setSelectedTab] = useState(0);
   const [tabHistory, setTabHistory] = useState([0]);
   const [historyIndex, setHistoryIndex] = useState(0);
-  const [direction, setDirection] = useState("right");
+  const [direction, setDirection] = useState("");
 
   const handleTabChange = (newValue) => {
+    // Determine direction for left/right animation based on tab change
     if (newValue < selectedTab) {
       setDirection("left");
     } else {
@@ -32,6 +33,7 @@ function App() {
 
   const goBack = () => {
     if (historyIndex > 0) {
+      setDirection("up"); // Apply "up" animation for back
       setHistoryIndex(historyIndex - 1);
       setSelectedTab(tabHistory[historyIndex - 1]);
     }
@@ -39,6 +41,7 @@ function App() {
 
   const goForward = () => {
     if (historyIndex < tabHistory.length - 1) {
+      setDirection("down"); // Apply "down" animation for forward
       setHistoryIndex(historyIndex + 1);
       setSelectedTab(tabHistory[historyIndex + 1]);
     }
@@ -55,6 +58,10 @@ function App() {
         return { ...baseStyle, transform: "translateX(100%)" };
       } else if (direction === "left") {
         return { ...baseStyle, transform: "translateX(-100%)" };
+      } else if (direction === "up") {
+        return { ...baseStyle, transform: "translateY(-100%)" };
+      } else if (direction === "down") {
+        return { ...baseStyle, transform: "translateY(100%)" };
       }
     }
 
@@ -67,6 +74,10 @@ function App() {
         return { ...baseStyle, transform: "translateX(-100%)" };
       } else if (direction === "left") {
         return { ...baseStyle, transform: "translateX(100%)" };
+      } else if (direction === "up") {
+        return { ...baseStyle, transform: "translateY(100%)" };
+      } else if (direction === "down") {
+        return { ...baseStyle, transform: "translateY(-100%)" };
       }
     }
 
@@ -78,9 +89,9 @@ function App() {
       event.preventDefault();
 
       if (event.button === 3) {
-        goBack();
+        goBack(); // Use 'up' for back
       } else if (event.button === 4) {
-        goForward();
+        goForward(); // Use 'down' for forward
       }
     };
 
@@ -89,7 +100,7 @@ function App() {
     return () => {
       window.removeEventListener("mouseup", handleMouseBackButton);
     };
-  }, [tabHistory, historyIndex]);
+  }, [tabHistory, historyIndex, selectedTab]);
 
   return (
     <div className="App">
