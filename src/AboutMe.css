@@ -85,3 +85,31 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .about-me-intro {
+    font-size: 1.0rem;
+  }
+
+  .about-me-title {
+    width: 80dvw;
+    font-size: 1.5rem;
+  }
+
+  .about-me-bio {
+    width: 80dvw;
+    font-size: 1.5rem;
+  }
+
+  .cli-prompt-rhs {
+    font-size: 1.2rem;
+  }
+
+  .cli-prompt-lhs {
+    font-size: 1.2rem;
+  }
+
+  .terminal-menu-item {
+    font-size: 1.0rem;
+  }
+}

@@ -83,7 +83,7 @@ const VinylAnatomy = () => {
             resonance properties, influencing the overall sonic experience.
           </p>
           <img
-            src="./media/anatomy-of-a-vinyl-turntable/plinth.webp"
+            src={require("./media/anatomy-of-a-vinyl-turntable/plinth.webp")}
             alt="plinth"
           />
           <cite>

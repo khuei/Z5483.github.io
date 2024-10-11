@@ -60,3 +60,9 @@ img.title-art {
   line-height: 3vh;
   line-height: 3dvh;
 }
+
+@media (max-width: 768px) {
+  .blog-listing-item {
+    font-size: 1.3rem;
+  }
+}

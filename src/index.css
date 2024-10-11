@@ -29,8 +29,8 @@ body {
   margin: 0;
   padding: 0;
   background: #F8F8F8;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100dvh;
+  width: 100dvw;
   z-index: -1;
 }
 
@@ -39,11 +39,10 @@ nav {
 }
 
 aside {
-  max-width: 35vw;
-  max-width: 35dvw;
+  max-width: 50dvw;
   height: auto;
-  font-size: 1em;
-  padding: 1vh;
+  font-size: 1.0rem;
+  padding: 10px;
   font-style: oblique;
   color: #F8F8F8;
   background-color: #383838;
@@ -55,14 +54,16 @@ aside {
 }
 
 aside cite {
-  max-width: 35vw;
-  max-width: 35dvw;
-  font-size: 1.2em;
   text-align: center;
-  padding-left: 3vw;
   padding-left: 3dvw;
   overflow-wrap: break-word;
   hyphens: manual;
+}
+
+@media (max-width: 768px) {
+  aside {
+    font-size: 0.8rem;
+  }
 }
 
 hr {

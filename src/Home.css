@@ -1,7 +1,6 @@
 #profile {
   visibility: hidden;
   color: #383838;
-  height: 95vh;
   height: 95dvh;
   display: flex;
   flex-direction: column;
@@ -57,8 +56,6 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  padding-right: 4%;
-  margin-left: 3dvw;
 }
 
 .animate .body-link-menu li {
@@ -139,4 +136,25 @@
   padding-left: 4dvw;
   padding-right: 4dvw;
   gap: 2vh;
+}
+
+@media (max-width: 768px) {
+  .profile-icon {
+    width: 200px;
+  }
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .profile-subscript {
+    font-size: 1.3rem;
+  }
+
+  .body-link-menu {
+    font-size: 0.8rem;
+  }
+
+  .image-subscript {
+    font-size: 1.3rem;
+  }
 }

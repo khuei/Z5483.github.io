@@ -3,7 +3,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  width: 100dvw;
   height: 5dvh;
   white-space: nowrap;
   z-index: 1000;
@@ -14,19 +14,23 @@ header {
   text-decoration: none;
   padding-left: 2vw;
   padding-left: 2dvw;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .header-menu {
   list-style: none;
   display: flex;
   float: right;
-  gap: 2vw;
   gap: 2dvw;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   padding-right: 2vw;
-  padding-right: 2dvw;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .header-menu {
+    gap: 4dvw;
+  }
 }
 
 .header-menu-item {

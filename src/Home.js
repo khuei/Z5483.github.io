@@ -36,7 +36,7 @@ function Home({ onChangeTab }) {
 
   return (
     <div id="body">
-      <section id="profile">
+      <center><section id="profile">
         <svg
           width="15dvw"
           xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ function Home({ onChangeTab }) {
             </a>
           </li>
         </ul>
-      </section>
+      </section></center>
     </div>
   );
 }
