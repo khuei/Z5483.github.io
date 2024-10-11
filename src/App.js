@@ -85,20 +85,33 @@ function App() {
   };
 
   useEffect(() => {
-    const handleMouseBackButton = (event) => {
-      event.preventDefault();
-
-      if (event.button === 3) {
-        goBack(); // Use 'up' for back
-      } else if (event.button === 4) {
-        goForward(); // Use 'down' for forward
+    const handleBackForwardNavigation = (event) => {
+      if (event.state) {
+        // Check the direction from the history state
+        if (event.state.direction === "back") {
+          goBack(); // Go back
+        } else if (event.state.direction === "forward") {
+          goForward(); // Go forward
+        }
       }
     };
 
-    window.addEventListener("mouseup", handleMouseBackButton);
+    const handleMouseBackForward = (event) => {
+      if (event.button === 3) {
+        event.preventDefault();
+        goBack(); // Mouse button 3 for back
+      } else if (event.button === 4) {
+        event.preventDefault();
+        goForward(); // Mouse button 4 for forward
+      }
+    };
+
+    window.addEventListener("popstate", handleBackForwardNavigation);
+    window.addEventListener("mouseup", handleMouseBackForward);
 
     return () => {
-      window.removeEventListener("mouseup", handleMouseBackButton);
+      window.removeEventListener("popstate", handleBackForwardNavigation);
+      window.removeEventListener("mouseup", handleMouseBackForward);
     };
   }, [tabHistory, historyIndex, selectedTab]);
 
