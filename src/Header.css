@@ -28,12 +28,26 @@ header {
 }
 
 @media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
   .header-logo {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
   }
 
   .header-menu {
-    font-size: 1.2rem;
+    display: block;
+    font-size: 3.0rem;
+    list-style: none;
+  }
+
+  .header-menu li {
+    margin-bottom: 4dvh;
+  }
+
+  .header-menu li:last-child {
+    margin-bottom: 0;
   }
 
   .header-menu {
