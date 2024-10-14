@@ -139,9 +139,13 @@
 }
 
 @media (max-width: 768px) {
+  #profile {
+    margin-right: 8dvw;
+  }
   .profile-icon {
     width: 200px;
   }
+
   .profile-name {
     font-size: 1.8rem;
   }
