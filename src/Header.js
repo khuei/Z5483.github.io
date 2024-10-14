@@ -7,6 +7,8 @@ import { MdMenu } from "react-icons/md";
 function Header({ onChangeTab, currentTab }) {
   const [isMobile, setIsMobile] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+  const [animationClass, setAnimationClass] = useState("");
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -18,11 +20,21 @@ function Header({ onChangeTab, currentTab }) {
   };
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
+    if (showMenu) {
+      setAnimationClass("slide-up-animation");
+      setTimeout(() => {
+        setShowMenu(false);
+        setAnimationClass("");
+      }, 500);
+    } else {
+      setShowMenu(true);
+      setAnimationClass("slide-down-animation");
+    }
   };
 
   useEffect(() => {
     handleResize();
+    setIsHydrated(true);
 
     window.addEventListener("resize", handleResize);
 
@@ -30,6 +42,11 @@ function Header({ onChangeTab, currentTab }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (!isHydrated) {
+    return null;
+  }
+
   return (
     <>
       {isMobile ? (
@@ -39,6 +56,7 @@ function Header({ onChangeTab, currentTab }) {
           </h1>
           {showMenu && (
             <Box
+              className={animationClass}
               sx={{
                 position: "fixed",
                 top: 0,
@@ -54,49 +72,49 @@ function Header({ onChangeTab, currentTab }) {
                 justifyContent: "center",
               }}
             >
-          <nav>
-            <ul className="header-menu">
-              <li>
-                <a
-                  href="/"
-                  className="header-menu-item"
-                  id="header-item-home"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(0);
-                  }}
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/blog"
-                  className="header-menu-item"
-                  id="header-item-blog"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(1);
-                  }}
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/about-me"
-                  className="header-menu-item"
-                  id="header-item-about-me"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(2);
-                  }}
-                >
-                  About Me
-                </a>
-              </li>
-            </ul>
-          </nav>
+              <nav>
+                <ul className="header-menu">
+                  <li>
+                    <a
+                      href="/"
+                      className="header-menu-item"
+                      id="header-item-home"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleChange(0);
+                      }}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/blog"
+                      className="header-menu-item"
+                      id="header-item-blog"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleChange(1);
+                      }}
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/about-me"
+                      className="header-menu-item"
+                      id="header-item-about-me"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleChange(2);
+                      }}
+                    >
+                      About Me
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </Box>
           )}
         </header>
