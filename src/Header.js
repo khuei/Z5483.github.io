@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
-
 import Box from "@mui/material/Box";
 import { MdMenu } from "react-icons/md";
 
-function Header({ onChangeTab, currentTab }) {
+function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
@@ -12,11 +12,6 @@ function Header({ onChangeTab, currentTab }) {
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
-  };
-
-  const handleChange = (newValue) => {
-    onChangeTab(newValue);
-    toggleMenu();
   };
 
   const toggleMenu = () => {
@@ -37,7 +32,6 @@ function Header({ onChangeTab, currentTab }) {
     setIsHydrated(true);
 
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -75,43 +69,13 @@ function Header({ onChangeTab, currentTab }) {
               <nav>
                 <ul className="header-menu">
                   <li>
-                    <a
-                      href="/"
-                      className="header-menu-item"
-                      id="header-item-home"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleChange(0);
-                      }}
-                    >
-                      Home
-                    </a>
+                    <Link to="/" className="header-menu-item" id="header-item-home">Home</Link>
                   </li>
                   <li>
-                    <a
-                      href="/blog"
-                      className="header-menu-item"
-                      id="header-item-blog"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleChange(1);
-                      }}
-                    >
-                      Blog
-                    </a>
+                    <Link to="/blog" className="header-menu-item" id="header-item-blog">Blog</Link>
                   </li>
                   <li>
-                    <a
-                      href="/about-me"
-                      className="header-menu-item"
-                      id="header-item-about-me"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleChange(2);
-                      }}
-                    >
-                      About Me
-                    </a>
+                    <Link to="/about-me" className="header-menu-item" id="header-item-about-me">About Me</Link>
                   </li>
                 </ul>
               </nav>
@@ -121,50 +85,18 @@ function Header({ onChangeTab, currentTab }) {
       ) : (
         <header>
           <h1 className="header-logo">
-            <a href="/" className="header-menu-item">
-              khuen
-            </a>
+            <Link to="/" className="header-menu-item">khuen</Link>
           </h1>
           <nav>
             <ul className="header-menu">
               <li>
-                <a
-                  href="/"
-                  className="header-menu-item"
-                  id="header-item-home"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(0);
-                  }}
-                >
-                  Home
-                </a>
+                <Link to="/" className="header-menu-item" id="header-item-home">Home</Link>
               </li>
               <li>
-                <a
-                  href="/blog"
-                  className="header-menu-item"
-                  id="header-item-blog"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(1);
-                  }}
-                >
-                  Blog
-                </a>
+                <Link to="/blog" className="header-menu-item" id="header-item-blog">Blog</Link>
               </li>
               <li>
-                <a
-                  href="/about-me"
-                  className="header-menu-item"
-                  id="header-item-about-me"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleChange(2);
-                  }}
-                >
-                  About Me
-                </a>
+                <Link to="/about-me" className="header-menu-item" id="header-item-about-me">About Me</Link>
               </li>
             </ul>
           </nav>

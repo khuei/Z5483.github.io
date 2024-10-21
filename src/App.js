@@ -1,50 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
-import Home from "./Home.js";
-import Blog from "./Blog.js";
-import AboutMe from "./AboutMe.js";
-import Header from "./Header.js";
+import Home from "./Home";
+import Blog from "./Blog";
+import AboutMe from "./AboutMe";
+import Header from "./Header";
 
-import FavoriteFont from "./blog/FavoriteFont.js";
-import CollegeProductivity from "./blog/CollegeProductivity.js";
-import VinylAnatomy from "./blog/VinylAnatomy.js";
-import MakingCoffee from "./blog/MakingCoffee.js";
+import FavoriteFont from "./blog/FavoriteFont";
+import CollegeProductivity from "./blog/CollegeProductivity";
+import VinylAnatomy from "./blog/VinylAnatomy";
+import MakingCoffee from "./blog/MakingCoffee";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const [tabHistory, setTabHistory] = useState([0]);
-  const [historyIndex, setHistoryIndex] = useState(0);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [direction, setDirection] = useState("");
 
   const handleTabChange = (newValue) => {
-    // Determine direction for left/right animation based on tab change
-    if (newValue < selectedTab) {
-      setDirection("left");
-    } else {
-      setDirection("right");
-    }
+    const currentPath = location.pathname;
 
-    const newHistory = [...tabHistory.slice(0, historyIndex + 1), newValue];
-    setTabHistory(newHistory);
-    setHistoryIndex(historyIndex + 1);
-    setSelectedTab(newValue);
+    if (newValue === 0 && currentPath !== "/") {
+      setDirection("right");
+      navigate("/");
+    } else if (newValue === 1 && currentPath !== "/blog") {
+      setDirection("right");
+      navigate("/blog");
+    } else if (newValue === 2 && currentPath !== "/about-me") {
+      setDirection("right");
+      navigate("/about-me");
+    }
   };
 
   const goBack = () => {
-    if (historyIndex > 0) {
-      setDirection("up"); // Apply "up" animation for back
-      setHistoryIndex(historyIndex - 1);
-      setSelectedTab(tabHistory[historyIndex - 1]);
-    }
+    setDirection("up");
+    navigate(-1);
   };
 
   const goForward = () => {
-    if (historyIndex < tabHistory.length - 1) {
-      setDirection("down"); // Apply "down" animation for forward
-      setHistoryIndex(historyIndex + 1);
-      setSelectedTab(tabHistory[historyIndex + 1]);
-    }
+    setDirection("down");
+    navigate(1);
   };
 
   const getTransitionStyles = (state, direction) => {
@@ -87,11 +82,10 @@ function App() {
   useEffect(() => {
     const handleBackForwardNavigation = (event) => {
       if (event.state) {
-        // Check the direction from the history state
         if (event.state.direction === "back") {
-          goBack(); // Go back
+          goBack();
         } else if (event.state.direction === "forward") {
-          goForward(); // Go forward
+          goForward();
         }
       }
     };
@@ -99,10 +93,10 @@ function App() {
     const handleMouseBackForward = (event) => {
       if (event.button === 3) {
         event.preventDefault();
-        goBack(); // Mouse button 3 for back
+        goBack();
       } else if (event.button === 4) {
         event.preventDefault();
-        goForward(); // Mouse button 4 for forward
+        goForward();
       }
     };
 
@@ -113,20 +107,20 @@ function App() {
       window.removeEventListener("popstate", handleBackForwardNavigation);
       window.removeEventListener("mouseup", handleMouseBackForward);
     };
-  }, [tabHistory, historyIndex, selectedTab]);
+  }, []);
 
   return (
     <div className="App">
-      <Header onChangeTab={handleTabChange} currentTab={selectedTab} />
+      <Header onChangeTab={handleTabChange} />
       <TransitionGroup>
         <CSSTransition
-          key={selectedTab}
+          key={location.key}
           timeout={300}
           classNames="fade"
           onEnter={(node) =>
             Object.assign(
               node.style,
-              getTransitionStyles("entering", direction),
+              getTransitionStyles("entering", direction)
             )
           }
           onEntered={(node) =>
@@ -137,13 +131,18 @@ function App() {
           }
         >
           <div style={getTransitionStyles("entered", direction)}>
-            {selectedTab === 0 && <Home onChangeTab={handleTabChange} />}
-            {selectedTab === 1 && <Blog onChangeTab={handleTabChange} />}
-            {selectedTab === 2 && <AboutMe />}
-            {selectedTab === 100 && <FavoriteFont />}
-            {selectedTab === 101 && <CollegeProductivity />}
-            {selectedTab === 102 && <VinylAnatomy />}
-            {selectedTab === 103 && <MakingCoffee />}
+            <Routes location={location}>
+              <Route path="/" element={<Home onChangeTab={handleTabChange} />} />
+              <Route path="/blog" element={<Blog onChangeTab={handleTabChange} />} />
+              <Route path="/about-me" element={<AboutMe />} />
+              <Route path="/blog/favorite-font" element={<FavoriteFont />} />
+              <Route
+                path="/blog/college-productivity"
+                element={<CollegeProductivity />}
+              />
+              <Route path="/blog/vinyl-anatomy" element={<VinylAnatomy />} />
+              <Route path="/blog/making-coffee" element={<MakingCoffee />} />
+            </Routes>
           </div>
         </CSSTransition>
       </TransitionGroup>
