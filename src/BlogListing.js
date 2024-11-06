@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./BlogListing.css";
 
 const BlogListing = () => {
-  const navigate = useNavigate();  // Use useNavigate for routing
+  const navigate = useNavigate(); // Use useNavigate for routing
 
   useEffect(() => {
     document.querySelectorAll(".blog-listing-item").forEach((item, index) => {
@@ -64,7 +64,7 @@ const BlogListing = () => {
             className="blog-listing-description"
             onClick={(e) => {
               e.preventDefault();
-              navigate(blog.link);  // Navigate to the blog page
+              navigate(blog.link); // Navigate to the blog page
             }}
           >
             <span className="blog-tag">{blog.tag}</span>

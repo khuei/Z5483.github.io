@@ -69,13 +69,34 @@ function Header() {
               <nav>
                 <ul className="header-menu">
                   <li>
-                    <Link to="/" className="header-menu-item" id="header-item-home" onClick={toggleMenu}>Home</Link>
+                    <Link
+                      to="/"
+                      className="header-menu-item"
+                      id="header-item-home"
+                      onClick={toggleMenu}
+                    >
+                      Home
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/blog" className="header-menu-item" id="header-item-blog" onClick={toggleMenu}>Blog</Link>
+                    <Link
+                      to="/blog"
+                      className="header-menu-item"
+                      id="header-item-blog"
+                      onClick={toggleMenu}
+                    >
+                      Blog
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/about-me" className="header-menu-item" id="header-item-about-me" onClick={toggleMenu}>About Me</Link>
+                    <Link
+                      to="/about-me"
+                      className="header-menu-item"
+                      id="header-item-about-me"
+                      onClick={toggleMenu}
+                    >
+                      About Me
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -85,18 +106,34 @@ function Header() {
       ) : (
         <header>
           <h1 className="header-logo">
-            <Link to="/" className="header-menu-item">khuen</Link>
+            <Link to="/" className="header-menu-item">
+              khuen
+            </Link>
           </h1>
           <nav>
             <ul className="header-menu">
               <li>
-                <Link to="/" className="header-menu-item" id="header-item-home">Home</Link>
+                <Link to="/" className="header-menu-item" id="header-item-home">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/blog" className="header-menu-item" id="header-item-blog">Blog</Link>
+                <Link
+                  to="/blog"
+                  className="header-menu-item"
+                  id="header-item-blog"
+                >
+                  Blog
+                </Link>
               </li>
               <li>
-                <Link to="/about-me" className="header-menu-item" id="header-item-about-me">About Me</Link>
+                <Link
+                  to="/about-me"
+                  className="header-menu-item"
+                  id="header-item-about-me"
+                >
+                  About Me
+                </Link>
               </li>
             </ul>
           </nav>
